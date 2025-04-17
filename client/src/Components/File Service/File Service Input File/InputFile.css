@@ -1,0 +1,25 @@
+.input-file {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border: 2px #0000009a dotted;
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.input-file:hover {
+  background-color: #117fd915;
+  border-color: #117fd9eb;
+}
+
+.input-file__title {
+  font-weight: bold;
+}
+
+.input-file__desc {
+  font-size: 14px;
+}

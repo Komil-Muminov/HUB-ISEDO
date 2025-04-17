@@ -1,0 +1,175 @@
+table.registry {
+  width: 100%;
+  border-collapse: separate; /* Используем separate для работы с border-radius */
+  border-spacing: 0 15px; /* Исключаем горизонтальные отступы, создаем вертикальные */
+}
+
+.registry tbody tr {
+  background: var(--background-primary);
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+}
+
+.registry tbody tr:hover {
+  background-color: #ededed;
+}
+
+.registry th {
+  color: var(--primary-color);
+}
+
+.registry th,
+.registry td {
+  padding: 20px;
+  text-align: start;
+  max-width: 200px; /* Ограничиваем ширину ячеек */
+  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+  overflow: hidden; /* Скрываем текст, который выходит за пределы */
+  text-overflow: ellipsis; /* Добавляем многоточие в конце */
+}
+
+.registry tbody tr td {
+  padding: 20px 20px;
+  border-top-color: #d8d8d8;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-color: #d8d8d8;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-right: 2px dotted #d8d8d8;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Закругляем углы первой и последней ячейки */
+.registry tbody tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: 1px solid #d8d8d8; /* Добавляем левую границу для первой ячейки */
+}
+
+.registry tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid #d8d8d8; /* Добавляем правую границу для последней ячейки */
+}
+
+.status-preparation,
+.status-affirmation,
+.status-completed,
+.status-deleted {
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+}
+
+.status-preparation {
+  background-color: #e5f5ff;
+  border: 2px solid #669bba;
+  color: #669bba;
+}
+
+.status-affirmation {
+  background-color: #fff6ea;
+  border: 2px solid #ba9566;
+  color: #ba9566;
+}
+
+.status-completed {
+  background-color: #eafff3;
+  border: 2px solid #66ba87;
+  color: #63b885;
+}
+
+.status-deleted {
+  background-color: #ffeaea;
+  border: 2px solid #b96363;
+  color: #ba6565;
+}
+
+/* .flex-table {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.flex-table-header {
+  display: flex;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.flex-header-item {
+  flex: 1;
+  padding: 10px;
+  text-align: start;
+  color: var(--primary-color);
+}
+
+.flex-header-item:last-child {
+  border-right: none;
+}
+
+.flex-table-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d8d8d8;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.flex-row:hover {
+  background-color: #ededed;
+}
+
+.flex-cell {
+  flex: 1;
+  padding: 10px 30px;
+  text-align: start;
+  border-right: 2px dotted #d8d8d8;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.flex-cell:last-child {
+  border-right: none;
+}
+
+.active-status,
+.inactive-status {
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+}
+
+.active-status {
+  background-color: #eafff3;
+  border: 2px solid #66ba87;
+  color: #63b885;
+}
+
+.inactive-status {
+  background-color: #ffeaea;
+  border: 2px solid #b96363;
+  color: #ba6565;
+} */

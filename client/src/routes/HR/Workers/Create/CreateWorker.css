@@ -1,0 +1,28 @@
+.creatWorker___contnet {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.creatWorker__form {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.creatWorker__form select {
+	width: 100%;
+	min-width: 700px;
+}
+
+.createWorker-inp {
+	padding: 10px;
+	border-radius: 10px;
+	width: calc((100% - 10px) / 2);
+}
+
+.creatWorker-send-props {
+	display: flex;
+	flex-direction: column;
+}

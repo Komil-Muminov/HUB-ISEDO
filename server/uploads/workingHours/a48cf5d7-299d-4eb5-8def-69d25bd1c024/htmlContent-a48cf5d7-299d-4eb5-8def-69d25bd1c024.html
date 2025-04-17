@@ -1,0 +1,3648 @@
+<!--docxjs library predefined styles--><style>
+.docx-wrapper { background: gray; padding: 30px; padding-bottom: 0px; display: flex; flex-flow: column; align-items: center; } 
+.docx-wrapper>section.docx { background: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); margin-bottom: 30px; }
+.docx { color: black; hyphens: auto; text-underline-position: from-font; }
+section.docx { box-sizing: border-box; display: flex; flex-flow: column nowrap; position: relative; overflow: hidden; }
+section.docx>article { margin-bottom: auto; z-index: 1; }
+section.docx>footer { z-index: 1; }
+.docx table { border-collapse: collapse; }
+.docx table td, .docx table th { vertical-align: top; }
+.docx p { margin: 0pt; min-height: 1em; }
+.docx span { white-space: pre-wrap; overflow-wrap: break-word; }
+.docx a { color: inherit; text-decoration: inherit; }
+.docx svg { fill: transparent; }
+</style><!--docxjs document theme values--><style>.docx {
+  --docx-majorHAnsi-font: Calibri Light;
+  --docx-minorHAnsi-font: Calibri;
+  --docx-dk1-color: #000000;
+  --docx-lt1-color: #FFFFFF;
+  --docx-dk2-color: #44546A;
+  --docx-lt2-color: #E7E6E6;
+  --docx-accent1-color: #4472C4;
+  --docx-accent2-color: #ED7D31;
+  --docx-accent3-color: #A5A5A5;
+  --docx-accent4-color: #FFC000;
+  --docx-accent5-color: #5B9BD5;
+  --docx-accent6-color: #70AD47;
+  --docx-hlink-color: #0563C1;
+  --docx-folHlink-color: #954F72;
+}
+</style><!--docxjs document styles--><style>.docx span {
+  font-family: var(--docx-minorHAnsi-font);
+  min-height: 11.00pt;
+  font-size: 11.00pt;
+}
+.docx p {
+  margin-bottom: 8.00pt;
+  line-height: 1.08;
+}
+p.docx_1 {
+  margin-top: 12.00pt;
+  margin-bottom: 0.00pt;
+}
+p.docx_1 span {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 16.00pt;
+  font-size: 16.00pt;
+}
+p.docx_1 span {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 16.00pt;
+  font-size: 16.00pt;
+}
+p.docx_2 {
+  margin-top: 2.00pt;
+  margin-bottom: 0.00pt;
+}
+p.docx_2 span {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 13.00pt;
+  font-size: 13.00pt;
+}
+p.docx_2 span {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 13.00pt;
+  font-size: 13.00pt;
+}
+p.docx_3 {
+  margin-top: 2.00pt;
+  margin-bottom: 0.00pt;
+}
+p.docx_3 span {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #1F3763;
+  min-height: 12.00pt;
+  font-size: 12.00pt;
+}
+p.docx_3 span {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #1F3763;
+  min-height: 12.00pt;
+  font-size: 12.00pt;
+}
+p.docx_4 {
+  margin-top: 2.00pt;
+  margin-bottom: 0.00pt;
+}
+p.docx_4 span {
+  font-family: var(--docx-majorHAnsi-font);
+  font-style: italic;
+  color: #2F5496;
+}
+p.docx_4 span {
+  font-family: var(--docx-majorHAnsi-font);
+  font-style: italic;
+  color: #2F5496;
+}
+.docx table, table.docx_a1 td {
+  padding-top: 0.00pt;
+  padding-left: 5.40pt;
+  padding-bottom: 0.00pt;
+  padding-right: 5.40pt;
+}
+p.docx_a3 {
+  margin-left: 36.00pt;
+}
+p.docx_a4 {
+  margin-bottom: 0.00pt;
+  line-height: 1.00;
+}
+span.docx_10 {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 16.00pt;
+  font-size: 16.00pt;
+}
+span.docx_10 p {
+  margin-top: 12.00pt;
+  margin-bottom: 0.00pt;
+}
+span.docx_10 {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 16.00pt;
+  font-size: 16.00pt;
+}
+span.docx_20 {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 13.00pt;
+  font-size: 13.00pt;
+}
+span.docx_20 p {
+  margin-top: 2.00pt;
+  margin-bottom: 0.00pt;
+}
+span.docx_20 {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #2F5496;
+  min-height: 13.00pt;
+  font-size: 13.00pt;
+}
+span.docx_a5 {
+  font-weight: bold;
+}
+span.docx_30 {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #1F3763;
+  min-height: 12.00pt;
+  font-size: 12.00pt;
+}
+span.docx_30 p {
+  margin-top: 2.00pt;
+  margin-bottom: 0.00pt;
+}
+span.docx_30 {
+  font-family: var(--docx-majorHAnsi-font);
+  color: #1F3763;
+  min-height: 12.00pt;
+  font-size: 12.00pt;
+}
+p.docx_a6 {
+  margin-top: 5.00pt;
+  margin-bottom: 5.00pt;
+  line-height: 1.00;
+}
+p.docx_a6 span {
+  font-family: 'Times New Roman';
+  min-height: 12.00pt;
+  font-size: 12.00pt;
+}
+span.docx_40 {
+  font-family: var(--docx-majorHAnsi-font);
+  font-style: italic;
+  color: #2F5496;
+}
+span.docx_40 p {
+  margin-top: 2.00pt;
+  margin-bottom: 0.00pt;
+}
+span.docx_40 {
+  font-family: var(--docx-majorHAnsi-font);
+  font-style: italic;
+  color: #2F5496;
+}
+</style><!--docxjs document numbering styles--><style>p.docx-num-1-0:before {
+  content: ""counter(docx-num-1-0, decimal)".\9";
+  counter-increment: docx-num-1-0;
+}
+p.docx-num-1-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-1-0 {
+  counter-reset: docx-num-1-1 0;
+}
+p.docx-num-1-1:before {
+  content: ""counter(docx-num-1-1, lower-alpha)".\9";
+  counter-increment: docx-num-1-1;
+}
+p.docx-num-1-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-1-1 {
+  counter-reset: docx-num-1-2 0;
+}
+p.docx-num-1-2:before {
+  content: ""counter(docx-num-1-2, lower-roman)".\9";
+  counter-increment: docx-num-1-2;
+}
+p.docx-num-1-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-1-2 {
+  counter-reset: docx-num-1-3 0;
+}
+p.docx-num-1-3:before {
+  content: ""counter(docx-num-1-3, decimal)".\9";
+  counter-increment: docx-num-1-3;
+}
+p.docx-num-1-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-1-3 {
+  counter-reset: docx-num-1-4 0;
+}
+p.docx-num-1-4:before {
+  content: ""counter(docx-num-1-4, lower-alpha)".\9";
+  counter-increment: docx-num-1-4;
+}
+p.docx-num-1-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-1-4 {
+  counter-reset: docx-num-1-5 0;
+}
+p.docx-num-1-5:before {
+  content: ""counter(docx-num-1-5, lower-roman)".\9";
+  counter-increment: docx-num-1-5;
+}
+p.docx-num-1-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-1-5 {
+  counter-reset: docx-num-1-6 0;
+}
+p.docx-num-1-6:before {
+  content: ""counter(docx-num-1-6, decimal)".\9";
+  counter-increment: docx-num-1-6;
+}
+p.docx-num-1-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-1-6 {
+  counter-reset: docx-num-1-7 0;
+}
+p.docx-num-1-7:before {
+  content: ""counter(docx-num-1-7, lower-alpha)".\9";
+  counter-increment: docx-num-1-7;
+}
+p.docx-num-1-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-1-7 {
+  counter-reset: docx-num-1-8 0;
+}
+p.docx-num-1-8:before {
+  content: ""counter(docx-num-1-8, lower-roman)".\9";
+  counter-increment: docx-num-1-8;
+}
+p.docx-num-1-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-20-0:before {
+  content: "\9";
+  counter-increment: docx-num-20-0;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-20-0 {
+  counter-reset: docx-num-20-1 0;
+}
+p.docx-num-20-1:before {
+  content: "o\9";
+  counter-increment: docx-num-20-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-20-1 {
+  counter-reset: docx-num-20-2 0;
+}
+p.docx-num-20-2:before {
+  content: "\9";
+  counter-increment: docx-num-20-2;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-20-2 {
+  counter-reset: docx-num-20-3 0;
+}
+p.docx-num-20-3:before {
+  content: "\9";
+  counter-increment: docx-num-20-3;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-20-3 {
+  counter-reset: docx-num-20-4 0;
+}
+p.docx-num-20-4:before {
+  content: "\9";
+  counter-increment: docx-num-20-4;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-20-4 {
+  counter-reset: docx-num-20-5 0;
+}
+p.docx-num-20-5:before {
+  content: "\9";
+  counter-increment: docx-num-20-5;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-20-5 {
+  counter-reset: docx-num-20-6 0;
+}
+p.docx-num-20-6:before {
+  content: "\9";
+  counter-increment: docx-num-20-6;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-20-6 {
+  counter-reset: docx-num-20-7 0;
+}
+p.docx-num-20-7:before {
+  content: "\9";
+  counter-increment: docx-num-20-7;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-20-7 {
+  counter-reset: docx-num-20-8 0;
+}
+p.docx-num-20-8:before {
+  content: "\9";
+  counter-increment: docx-num-20-8;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-20-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-8-0:before {
+  content: "\9";
+  counter-increment: docx-num-8-0;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-8-0 {
+  counter-reset: docx-num-8-1 0;
+}
+p.docx-num-8-1:before {
+  content: "o\9";
+  counter-increment: docx-num-8-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-8-1 {
+  counter-reset: docx-num-8-2 0;
+}
+p.docx-num-8-2:before {
+  content: "\9";
+  counter-increment: docx-num-8-2;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-8-2 {
+  counter-reset: docx-num-8-3 0;
+}
+p.docx-num-8-3:before {
+  content: "\9";
+  counter-increment: docx-num-8-3;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-8-3 {
+  counter-reset: docx-num-8-4 0;
+}
+p.docx-num-8-4:before {
+  content: "\9";
+  counter-increment: docx-num-8-4;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-8-4 {
+  counter-reset: docx-num-8-5 0;
+}
+p.docx-num-8-5:before {
+  content: "\9";
+  counter-increment: docx-num-8-5;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-8-5 {
+  counter-reset: docx-num-8-6 0;
+}
+p.docx-num-8-6:before {
+  content: "\9";
+  counter-increment: docx-num-8-6;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-8-6 {
+  counter-reset: docx-num-8-7 0;
+}
+p.docx-num-8-7:before {
+  content: "\9";
+  counter-increment: docx-num-8-7;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-8-7 {
+  counter-reset: docx-num-8-8 0;
+}
+p.docx-num-8-8:before {
+  content: "\9";
+  counter-increment: docx-num-8-8;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-8-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-18-0:before {
+  content: "\9";
+  counter-increment: docx-num-18-0;
+  font-family: Symbol;
+}
+p.docx-num-18-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 90.00pt;
+}
+p.docx-num-18-0 {
+  counter-reset: docx-num-18-1 0;
+}
+p.docx-num-18-1:before {
+  content: "o\9";
+  counter-increment: docx-num-18-1;
+  font-family: 'Courier New';
+}
+p.docx-num-18-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 126.00pt;
+}
+p.docx-num-18-1 {
+  counter-reset: docx-num-18-2 0;
+}
+p.docx-num-18-2:before {
+  content: "\9";
+  counter-increment: docx-num-18-2;
+  font-family: Wingdings;
+}
+p.docx-num-18-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 162.00pt;
+}
+p.docx-num-18-2 {
+  counter-reset: docx-num-18-3 0;
+}
+p.docx-num-18-3:before {
+  content: "\9";
+  counter-increment: docx-num-18-3;
+  font-family: Symbol;
+}
+p.docx-num-18-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 198.00pt;
+}
+p.docx-num-18-3 {
+  counter-reset: docx-num-18-4 0;
+}
+p.docx-num-18-4:before {
+  content: "o\9";
+  counter-increment: docx-num-18-4;
+  font-family: 'Courier New';
+}
+p.docx-num-18-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 234.00pt;
+}
+p.docx-num-18-4 {
+  counter-reset: docx-num-18-5 0;
+}
+p.docx-num-18-5:before {
+  content: "\9";
+  counter-increment: docx-num-18-5;
+  font-family: Wingdings;
+}
+p.docx-num-18-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 270.00pt;
+}
+p.docx-num-18-5 {
+  counter-reset: docx-num-18-6 0;
+}
+p.docx-num-18-6:before {
+  content: "\9";
+  counter-increment: docx-num-18-6;
+  font-family: Symbol;
+}
+p.docx-num-18-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 306.00pt;
+}
+p.docx-num-18-6 {
+  counter-reset: docx-num-18-7 0;
+}
+p.docx-num-18-7:before {
+  content: "o\9";
+  counter-increment: docx-num-18-7;
+  font-family: 'Courier New';
+}
+p.docx-num-18-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 342.00pt;
+}
+p.docx-num-18-7 {
+  counter-reset: docx-num-18-8 0;
+}
+p.docx-num-18-8:before {
+  content: "\9";
+  counter-increment: docx-num-18-8;
+  font-family: Wingdings;
+}
+p.docx-num-18-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 378.00pt;
+}
+p.docx-num-3-0:before {
+  content: ""counter(docx-num-3-0, decimal)".\9";
+  counter-increment: docx-num-3-0;
+}
+p.docx-num-3-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-3-0 {
+  counter-reset: docx-num-3-1 0;
+}
+p.docx-num-3-1:before {
+  content: ""counter(docx-num-3-1, lower-alpha)".\9";
+  counter-increment: docx-num-3-1;
+}
+p.docx-num-3-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-3-1 {
+  counter-reset: docx-num-3-2 0;
+}
+p.docx-num-3-2:before {
+  content: ""counter(docx-num-3-2, lower-roman)".\9";
+  counter-increment: docx-num-3-2;
+}
+p.docx-num-3-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-3-2 {
+  counter-reset: docx-num-3-3 0;
+}
+p.docx-num-3-3:before {
+  content: ""counter(docx-num-3-3, decimal)".\9";
+  counter-increment: docx-num-3-3;
+}
+p.docx-num-3-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-3-3 {
+  counter-reset: docx-num-3-4 0;
+}
+p.docx-num-3-4:before {
+  content: ""counter(docx-num-3-4, lower-alpha)".\9";
+  counter-increment: docx-num-3-4;
+}
+p.docx-num-3-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-3-4 {
+  counter-reset: docx-num-3-5 0;
+}
+p.docx-num-3-5:before {
+  content: ""counter(docx-num-3-5, lower-roman)".\9";
+  counter-increment: docx-num-3-5;
+}
+p.docx-num-3-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-3-5 {
+  counter-reset: docx-num-3-6 0;
+}
+p.docx-num-3-6:before {
+  content: ""counter(docx-num-3-6, decimal)".\9";
+  counter-increment: docx-num-3-6;
+}
+p.docx-num-3-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-3-6 {
+  counter-reset: docx-num-3-7 0;
+}
+p.docx-num-3-7:before {
+  content: ""counter(docx-num-3-7, lower-alpha)".\9";
+  counter-increment: docx-num-3-7;
+}
+p.docx-num-3-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-3-7 {
+  counter-reset: docx-num-3-8 0;
+}
+p.docx-num-3-8:before {
+  content: ""counter(docx-num-3-8, lower-roman)".\9";
+  counter-increment: docx-num-3-8;
+}
+p.docx-num-3-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-24-0:before {
+  content: ""counter(docx-num-24-0, decimal)".\9";
+  counter-increment: docx-num-24-0;
+}
+p.docx-num-24-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-24-0 {
+  counter-reset: docx-num-24-1 0;
+}
+p.docx-num-24-1:before {
+  content: "o\9";
+  counter-increment: docx-num-24-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-24-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-24-1 {
+  counter-reset: docx-num-24-2 0;
+}
+p.docx-num-24-2:before {
+  content: ""counter(docx-num-24-2, decimal)".\9";
+  counter-increment: docx-num-24-2;
+}
+p.docx-num-24-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-24-2 {
+  counter-reset: docx-num-24-3 0;
+}
+p.docx-num-24-3:before {
+  content: ""counter(docx-num-24-3, decimal)".\9";
+  counter-increment: docx-num-24-3;
+}
+p.docx-num-24-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-24-3 {
+  counter-reset: docx-num-24-4 0;
+}
+p.docx-num-24-4:before {
+  content: ""counter(docx-num-24-4, decimal)".\9";
+  counter-increment: docx-num-24-4;
+}
+p.docx-num-24-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-24-4 {
+  counter-reset: docx-num-24-5 0;
+}
+p.docx-num-24-5:before {
+  content: ""counter(docx-num-24-5, decimal)".\9";
+  counter-increment: docx-num-24-5;
+}
+p.docx-num-24-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-24-5 {
+  counter-reset: docx-num-24-6 0;
+}
+p.docx-num-24-6:before {
+  content: ""counter(docx-num-24-6, decimal)".\9";
+  counter-increment: docx-num-24-6;
+}
+p.docx-num-24-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-24-6 {
+  counter-reset: docx-num-24-7 0;
+}
+p.docx-num-24-7:before {
+  content: ""counter(docx-num-24-7, decimal)".\9";
+  counter-increment: docx-num-24-7;
+}
+p.docx-num-24-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-24-7 {
+  counter-reset: docx-num-24-8 0;
+}
+p.docx-num-24-8:before {
+  content: ""counter(docx-num-24-8, decimal)".\9";
+  counter-increment: docx-num-24-8;
+}
+p.docx-num-24-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-2-0:before {
+  content: ""counter(docx-num-2-0, decimal)".\9";
+  counter-increment: docx-num-2-0;
+}
+p.docx-num-2-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-2-0 {
+  counter-reset: docx-num-2-1 0;
+}
+p.docx-num-2-1:before {
+  content: ""counter(docx-num-2-1, lower-alpha)".\9";
+  counter-increment: docx-num-2-1;
+}
+p.docx-num-2-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-2-1 {
+  counter-reset: docx-num-2-2 0;
+}
+p.docx-num-2-2:before {
+  content: ""counter(docx-num-2-2, lower-roman)".\9";
+  counter-increment: docx-num-2-2;
+}
+p.docx-num-2-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-2-2 {
+  counter-reset: docx-num-2-3 0;
+}
+p.docx-num-2-3:before {
+  content: ""counter(docx-num-2-3, decimal)".\9";
+  counter-increment: docx-num-2-3;
+}
+p.docx-num-2-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-2-3 {
+  counter-reset: docx-num-2-4 0;
+}
+p.docx-num-2-4:before {
+  content: ""counter(docx-num-2-4, lower-alpha)".\9";
+  counter-increment: docx-num-2-4;
+}
+p.docx-num-2-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-2-4 {
+  counter-reset: docx-num-2-5 0;
+}
+p.docx-num-2-5:before {
+  content: ""counter(docx-num-2-5, lower-roman)".\9";
+  counter-increment: docx-num-2-5;
+}
+p.docx-num-2-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-2-5 {
+  counter-reset: docx-num-2-6 0;
+}
+p.docx-num-2-6:before {
+  content: ""counter(docx-num-2-6, decimal)".\9";
+  counter-increment: docx-num-2-6;
+}
+p.docx-num-2-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-2-6 {
+  counter-reset: docx-num-2-7 0;
+}
+p.docx-num-2-7:before {
+  content: ""counter(docx-num-2-7, lower-alpha)".\9";
+  counter-increment: docx-num-2-7;
+}
+p.docx-num-2-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-2-7 {
+  counter-reset: docx-num-2-8 0;
+}
+p.docx-num-2-8:before {
+  content: ""counter(docx-num-2-8, lower-roman)".\9";
+  counter-increment: docx-num-2-8;
+}
+p.docx-num-2-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -9.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-25-0:before {
+  content: ""counter(docx-num-25-0, decimal)".\9";
+  counter-increment: docx-num-25-0;
+}
+p.docx-num-25-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-25-0 {
+  counter-reset: docx-num-25-1 0;
+}
+p.docx-num-25-1:before {
+  content: ""counter(docx-num-25-1, decimal)".\9";
+  counter-increment: docx-num-25-1;
+}
+p.docx-num-25-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-25-1 {
+  counter-reset: docx-num-25-2 0;
+}
+p.docx-num-25-2:before {
+  content: ""counter(docx-num-25-2, decimal)".\9";
+  counter-increment: docx-num-25-2;
+}
+p.docx-num-25-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-25-2 {
+  counter-reset: docx-num-25-3 0;
+}
+p.docx-num-25-3:before {
+  content: ""counter(docx-num-25-3, decimal)".\9";
+  counter-increment: docx-num-25-3;
+}
+p.docx-num-25-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-25-3 {
+  counter-reset: docx-num-25-4 0;
+}
+p.docx-num-25-4:before {
+  content: ""counter(docx-num-25-4, decimal)".\9";
+  counter-increment: docx-num-25-4;
+}
+p.docx-num-25-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-25-4 {
+  counter-reset: docx-num-25-5 0;
+}
+p.docx-num-25-5:before {
+  content: ""counter(docx-num-25-5, decimal)".\9";
+  counter-increment: docx-num-25-5;
+}
+p.docx-num-25-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-25-5 {
+  counter-reset: docx-num-25-6 0;
+}
+p.docx-num-25-6:before {
+  content: ""counter(docx-num-25-6, decimal)".\9";
+  counter-increment: docx-num-25-6;
+}
+p.docx-num-25-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-25-6 {
+  counter-reset: docx-num-25-7 0;
+}
+p.docx-num-25-7:before {
+  content: ""counter(docx-num-25-7, decimal)".\9";
+  counter-increment: docx-num-25-7;
+}
+p.docx-num-25-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-25-7 {
+  counter-reset: docx-num-25-8 0;
+}
+p.docx-num-25-8:before {
+  content: ""counter(docx-num-25-8, decimal)".\9";
+  counter-increment: docx-num-25-8;
+}
+p.docx-num-25-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-12-0:before {
+  content: ""counter(docx-num-12-0, decimal)".\9";
+  counter-increment: docx-num-12-0;
+}
+p.docx-num-12-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-12-0 {
+  counter-reset: docx-num-12-1 0;
+}
+p.docx-num-12-1:before {
+  content: "\9";
+  counter-increment: docx-num-12-1;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-12-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-12-1 {
+  counter-reset: docx-num-12-2 0;
+}
+p.docx-num-12-2:before {
+  content: ""counter(docx-num-12-2, decimal)".\9";
+  counter-increment: docx-num-12-2;
+}
+p.docx-num-12-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-12-2 {
+  counter-reset: docx-num-12-3 0;
+}
+p.docx-num-12-3:before {
+  content: ""counter(docx-num-12-3, decimal)".\9";
+  counter-increment: docx-num-12-3;
+}
+p.docx-num-12-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-12-3 {
+  counter-reset: docx-num-12-4 0;
+}
+p.docx-num-12-4:before {
+  content: ""counter(docx-num-12-4, decimal)".\9";
+  counter-increment: docx-num-12-4;
+}
+p.docx-num-12-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-12-4 {
+  counter-reset: docx-num-12-5 0;
+}
+p.docx-num-12-5:before {
+  content: ""counter(docx-num-12-5, decimal)".\9";
+  counter-increment: docx-num-12-5;
+}
+p.docx-num-12-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-12-5 {
+  counter-reset: docx-num-12-6 0;
+}
+p.docx-num-12-6:before {
+  content: ""counter(docx-num-12-6, decimal)".\9";
+  counter-increment: docx-num-12-6;
+}
+p.docx-num-12-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-12-6 {
+  counter-reset: docx-num-12-7 0;
+}
+p.docx-num-12-7:before {
+  content: ""counter(docx-num-12-7, decimal)".\9";
+  counter-increment: docx-num-12-7;
+}
+p.docx-num-12-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-12-7 {
+  counter-reset: docx-num-12-8 0;
+}
+p.docx-num-12-8:before {
+  content: ""counter(docx-num-12-8, decimal)".\9";
+  counter-increment: docx-num-12-8;
+}
+p.docx-num-12-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-7-0:before {
+  content: "\9";
+  counter-increment: docx-num-7-0;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-7-0 {
+  counter-reset: docx-num-7-1 0;
+}
+p.docx-num-7-1:before {
+  content: "o\9";
+  counter-increment: docx-num-7-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-7-1 {
+  counter-reset: docx-num-7-2 0;
+}
+p.docx-num-7-2:before {
+  content: "\9";
+  counter-increment: docx-num-7-2;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-7-2 {
+  counter-reset: docx-num-7-3 0;
+}
+p.docx-num-7-3:before {
+  content: "\9";
+  counter-increment: docx-num-7-3;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-7-3 {
+  counter-reset: docx-num-7-4 0;
+}
+p.docx-num-7-4:before {
+  content: "\9";
+  counter-increment: docx-num-7-4;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-7-4 {
+  counter-reset: docx-num-7-5 0;
+}
+p.docx-num-7-5:before {
+  content: "\9";
+  counter-increment: docx-num-7-5;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-7-5 {
+  counter-reset: docx-num-7-6 0;
+}
+p.docx-num-7-6:before {
+  content: "\9";
+  counter-increment: docx-num-7-6;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-7-6 {
+  counter-reset: docx-num-7-7 0;
+}
+p.docx-num-7-7:before {
+  content: "\9";
+  counter-increment: docx-num-7-7;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-7-7 {
+  counter-reset: docx-num-7-8 0;
+}
+p.docx-num-7-8:before {
+  content: "\9";
+  counter-increment: docx-num-7-8;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-7-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-21-0:before {
+  content: ""counter(docx-num-21-0, decimal)".\9";
+  counter-increment: docx-num-21-0;
+}
+p.docx-num-21-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-21-0 {
+  counter-reset: docx-num-21-1 0;
+}
+p.docx-num-21-1:before {
+  content: "o\9";
+  counter-increment: docx-num-21-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-21-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-21-1 {
+  counter-reset: docx-num-21-2 0;
+}
+p.docx-num-21-2:before {
+  content: ""counter(docx-num-21-2, decimal)".\9";
+  counter-increment: docx-num-21-2;
+}
+p.docx-num-21-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-21-2 {
+  counter-reset: docx-num-21-3 0;
+}
+p.docx-num-21-3:before {
+  content: ""counter(docx-num-21-3, decimal)".\9";
+  counter-increment: docx-num-21-3;
+}
+p.docx-num-21-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-21-3 {
+  counter-reset: docx-num-21-4 0;
+}
+p.docx-num-21-4:before {
+  content: ""counter(docx-num-21-4, decimal)".\9";
+  counter-increment: docx-num-21-4;
+}
+p.docx-num-21-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-21-4 {
+  counter-reset: docx-num-21-5 0;
+}
+p.docx-num-21-5:before {
+  content: ""counter(docx-num-21-5, decimal)".\9";
+  counter-increment: docx-num-21-5;
+}
+p.docx-num-21-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-21-5 {
+  counter-reset: docx-num-21-6 0;
+}
+p.docx-num-21-6:before {
+  content: ""counter(docx-num-21-6, decimal)".\9";
+  counter-increment: docx-num-21-6;
+}
+p.docx-num-21-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-21-6 {
+  counter-reset: docx-num-21-7 0;
+}
+p.docx-num-21-7:before {
+  content: ""counter(docx-num-21-7, decimal)".\9";
+  counter-increment: docx-num-21-7;
+}
+p.docx-num-21-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-21-7 {
+  counter-reset: docx-num-21-8 0;
+}
+p.docx-num-21-8:before {
+  content: ""counter(docx-num-21-8, decimal)".\9";
+  counter-increment: docx-num-21-8;
+}
+p.docx-num-21-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-19-0:before {
+  content: ""counter(docx-num-19-0, decimal)".\9";
+  counter-increment: docx-num-19-0;
+}
+p.docx-num-19-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-19-0 {
+  counter-reset: docx-num-19-1 0;
+}
+p.docx-num-19-1:before {
+  content: "o\9";
+  counter-increment: docx-num-19-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-19-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-19-1 {
+  counter-reset: docx-num-19-2 0;
+}
+p.docx-num-19-2:before {
+  content: ""counter(docx-num-19-2, decimal)".\9";
+  counter-increment: docx-num-19-2;
+}
+p.docx-num-19-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-19-2 {
+  counter-reset: docx-num-19-3 0;
+}
+p.docx-num-19-3:before {
+  content: ""counter(docx-num-19-3, decimal)".\9";
+  counter-increment: docx-num-19-3;
+}
+p.docx-num-19-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-19-3 {
+  counter-reset: docx-num-19-4 0;
+}
+p.docx-num-19-4:before {
+  content: ""counter(docx-num-19-4, decimal)".\9";
+  counter-increment: docx-num-19-4;
+}
+p.docx-num-19-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-19-4 {
+  counter-reset: docx-num-19-5 0;
+}
+p.docx-num-19-5:before {
+  content: ""counter(docx-num-19-5, decimal)".\9";
+  counter-increment: docx-num-19-5;
+}
+p.docx-num-19-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-19-5 {
+  counter-reset: docx-num-19-6 0;
+}
+p.docx-num-19-6:before {
+  content: ""counter(docx-num-19-6, decimal)".\9";
+  counter-increment: docx-num-19-6;
+}
+p.docx-num-19-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-19-6 {
+  counter-reset: docx-num-19-7 0;
+}
+p.docx-num-19-7:before {
+  content: ""counter(docx-num-19-7, decimal)".\9";
+  counter-increment: docx-num-19-7;
+}
+p.docx-num-19-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-19-7 {
+  counter-reset: docx-num-19-8 0;
+}
+p.docx-num-19-8:before {
+  content: ""counter(docx-num-19-8, decimal)".\9";
+  counter-increment: docx-num-19-8;
+}
+p.docx-num-19-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-11-0:before {
+  content: ""counter(docx-num-11-0, decimal)".\9";
+  counter-increment: docx-num-11-0;
+}
+p.docx-num-11-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-11-0 {
+  counter-reset: docx-num-11-1 0;
+}
+p.docx-num-11-1:before {
+  content: ""counter(docx-num-11-1, decimal)".\9";
+  counter-increment: docx-num-11-1;
+}
+p.docx-num-11-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-11-1 {
+  counter-reset: docx-num-11-2 0;
+}
+p.docx-num-11-2:before {
+  content: ""counter(docx-num-11-2, decimal)".\9";
+  counter-increment: docx-num-11-2;
+}
+p.docx-num-11-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-11-2 {
+  counter-reset: docx-num-11-3 0;
+}
+p.docx-num-11-3:before {
+  content: ""counter(docx-num-11-3, decimal)".\9";
+  counter-increment: docx-num-11-3;
+}
+p.docx-num-11-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-11-3 {
+  counter-reset: docx-num-11-4 0;
+}
+p.docx-num-11-4:before {
+  content: ""counter(docx-num-11-4, decimal)".\9";
+  counter-increment: docx-num-11-4;
+}
+p.docx-num-11-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-11-4 {
+  counter-reset: docx-num-11-5 0;
+}
+p.docx-num-11-5:before {
+  content: ""counter(docx-num-11-5, decimal)".\9";
+  counter-increment: docx-num-11-5;
+}
+p.docx-num-11-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-11-5 {
+  counter-reset: docx-num-11-6 0;
+}
+p.docx-num-11-6:before {
+  content: ""counter(docx-num-11-6, decimal)".\9";
+  counter-increment: docx-num-11-6;
+}
+p.docx-num-11-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-11-6 {
+  counter-reset: docx-num-11-7 0;
+}
+p.docx-num-11-7:before {
+  content: ""counter(docx-num-11-7, decimal)".\9";
+  counter-increment: docx-num-11-7;
+}
+p.docx-num-11-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-11-7 {
+  counter-reset: docx-num-11-8 0;
+}
+p.docx-num-11-8:before {
+  content: ""counter(docx-num-11-8, decimal)".\9";
+  counter-increment: docx-num-11-8;
+}
+p.docx-num-11-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-5-0:before {
+  content: "\9";
+  counter-increment: docx-num-5-0;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-5-0 {
+  counter-reset: docx-num-5-1 0;
+}
+p.docx-num-5-1:before {
+  content: "o\9";
+  counter-increment: docx-num-5-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-5-1 {
+  counter-reset: docx-num-5-2 0;
+}
+p.docx-num-5-2:before {
+  content: "\9";
+  counter-increment: docx-num-5-2;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-5-2 {
+  counter-reset: docx-num-5-3 0;
+}
+p.docx-num-5-3:before {
+  content: "\9";
+  counter-increment: docx-num-5-3;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-5-3 {
+  counter-reset: docx-num-5-4 0;
+}
+p.docx-num-5-4:before {
+  content: "\9";
+  counter-increment: docx-num-5-4;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-5-4 {
+  counter-reset: docx-num-5-5 0;
+}
+p.docx-num-5-5:before {
+  content: "\9";
+  counter-increment: docx-num-5-5;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-5-5 {
+  counter-reset: docx-num-5-6 0;
+}
+p.docx-num-5-6:before {
+  content: "\9";
+  counter-increment: docx-num-5-6;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-5-6 {
+  counter-reset: docx-num-5-7 0;
+}
+p.docx-num-5-7:before {
+  content: "\9";
+  counter-increment: docx-num-5-7;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-5-7 {
+  counter-reset: docx-num-5-8 0;
+}
+p.docx-num-5-8:before {
+  content: "\9";
+  counter-increment: docx-num-5-8;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-5-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-13-0:before {
+  content: ""counter(docx-num-13-0, decimal)".\9";
+  counter-increment: docx-num-13-0;
+}
+p.docx-num-13-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-13-0 {
+  counter-reset: docx-num-13-1 0;
+}
+p.docx-num-13-1:before {
+  content: ""counter(docx-num-13-1, decimal)".\9";
+  counter-increment: docx-num-13-1;
+}
+p.docx-num-13-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-13-1 {
+  counter-reset: docx-num-13-2 0;
+}
+p.docx-num-13-2:before {
+  content: ""counter(docx-num-13-2, decimal)".\9";
+  counter-increment: docx-num-13-2;
+}
+p.docx-num-13-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-13-2 {
+  counter-reset: docx-num-13-3 0;
+}
+p.docx-num-13-3:before {
+  content: ""counter(docx-num-13-3, decimal)".\9";
+  counter-increment: docx-num-13-3;
+}
+p.docx-num-13-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-13-3 {
+  counter-reset: docx-num-13-4 0;
+}
+p.docx-num-13-4:before {
+  content: ""counter(docx-num-13-4, decimal)".\9";
+  counter-increment: docx-num-13-4;
+}
+p.docx-num-13-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-13-4 {
+  counter-reset: docx-num-13-5 0;
+}
+p.docx-num-13-5:before {
+  content: ""counter(docx-num-13-5, decimal)".\9";
+  counter-increment: docx-num-13-5;
+}
+p.docx-num-13-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-13-5 {
+  counter-reset: docx-num-13-6 0;
+}
+p.docx-num-13-6:before {
+  content: ""counter(docx-num-13-6, decimal)".\9";
+  counter-increment: docx-num-13-6;
+}
+p.docx-num-13-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-13-6 {
+  counter-reset: docx-num-13-7 0;
+}
+p.docx-num-13-7:before {
+  content: ""counter(docx-num-13-7, decimal)".\9";
+  counter-increment: docx-num-13-7;
+}
+p.docx-num-13-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-13-7 {
+  counter-reset: docx-num-13-8 0;
+}
+p.docx-num-13-8:before {
+  content: ""counter(docx-num-13-8, decimal)".\9";
+  counter-increment: docx-num-13-8;
+}
+p.docx-num-13-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-17-0:before {
+  content: ""counter(docx-num-17-0, decimal)".\9";
+  counter-increment: docx-num-17-0;
+}
+p.docx-num-17-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-17-0 {
+  counter-reset: docx-num-17-1 0;
+}
+p.docx-num-17-1:before {
+  content: "o\9";
+  counter-increment: docx-num-17-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-17-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-17-1 {
+  counter-reset: docx-num-17-2 0;
+}
+p.docx-num-17-2:before {
+  content: ""counter(docx-num-17-2, decimal)".\9";
+  counter-increment: docx-num-17-2;
+}
+p.docx-num-17-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-17-2 {
+  counter-reset: docx-num-17-3 0;
+}
+p.docx-num-17-3:before {
+  content: ""counter(docx-num-17-3, decimal)".\9";
+  counter-increment: docx-num-17-3;
+}
+p.docx-num-17-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-17-3 {
+  counter-reset: docx-num-17-4 0;
+}
+p.docx-num-17-4:before {
+  content: ""counter(docx-num-17-4, decimal)".\9";
+  counter-increment: docx-num-17-4;
+}
+p.docx-num-17-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-17-4 {
+  counter-reset: docx-num-17-5 0;
+}
+p.docx-num-17-5:before {
+  content: ""counter(docx-num-17-5, decimal)".\9";
+  counter-increment: docx-num-17-5;
+}
+p.docx-num-17-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-17-5 {
+  counter-reset: docx-num-17-6 0;
+}
+p.docx-num-17-6:before {
+  content: ""counter(docx-num-17-6, decimal)".\9";
+  counter-increment: docx-num-17-6;
+}
+p.docx-num-17-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-17-6 {
+  counter-reset: docx-num-17-7 0;
+}
+p.docx-num-17-7:before {
+  content: ""counter(docx-num-17-7, decimal)".\9";
+  counter-increment: docx-num-17-7;
+}
+p.docx-num-17-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-17-7 {
+  counter-reset: docx-num-17-8 0;
+}
+p.docx-num-17-8:before {
+  content: ""counter(docx-num-17-8, decimal)".\9";
+  counter-increment: docx-num-17-8;
+}
+p.docx-num-17-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-26-0:before {
+  content: "\9";
+  counter-increment: docx-num-26-0;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-26-0 {
+  counter-reset: docx-num-26-1 0;
+}
+p.docx-num-26-1:before {
+  content: "o\9";
+  counter-increment: docx-num-26-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-26-1 {
+  counter-reset: docx-num-26-2 0;
+}
+p.docx-num-26-2:before {
+  content: "\9";
+  counter-increment: docx-num-26-2;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-26-2 {
+  counter-reset: docx-num-26-3 0;
+}
+p.docx-num-26-3:before {
+  content: "\9";
+  counter-increment: docx-num-26-3;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-26-3 {
+  counter-reset: docx-num-26-4 0;
+}
+p.docx-num-26-4:before {
+  content: "\9";
+  counter-increment: docx-num-26-4;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-26-4 {
+  counter-reset: docx-num-26-5 0;
+}
+p.docx-num-26-5:before {
+  content: "\9";
+  counter-increment: docx-num-26-5;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-26-5 {
+  counter-reset: docx-num-26-6 0;
+}
+p.docx-num-26-6:before {
+  content: "\9";
+  counter-increment: docx-num-26-6;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-26-6 {
+  counter-reset: docx-num-26-7 0;
+}
+p.docx-num-26-7:before {
+  content: "\9";
+  counter-increment: docx-num-26-7;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-26-7 {
+  counter-reset: docx-num-26-8 0;
+}
+p.docx-num-26-8:before {
+  content: "\9";
+  counter-increment: docx-num-26-8;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-26-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-23-0:before {
+  content: "\9";
+  counter-increment: docx-num-23-0;
+  font-family: Symbol;
+}
+p.docx-num-23-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-23-0 {
+  counter-reset: docx-num-23-1 0;
+}
+p.docx-num-23-1:before {
+  content: "o\9";
+  counter-increment: docx-num-23-1;
+  font-family: 'Courier New';
+}
+p.docx-num-23-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-23-1 {
+  counter-reset: docx-num-23-2 0;
+}
+p.docx-num-23-2:before {
+  content: "\9";
+  counter-increment: docx-num-23-2;
+  font-family: Wingdings;
+}
+p.docx-num-23-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-23-2 {
+  counter-reset: docx-num-23-3 0;
+}
+p.docx-num-23-3:before {
+  content: "\9";
+  counter-increment: docx-num-23-3;
+  font-family: Symbol;
+}
+p.docx-num-23-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-23-3 {
+  counter-reset: docx-num-23-4 0;
+}
+p.docx-num-23-4:before {
+  content: "o\9";
+  counter-increment: docx-num-23-4;
+  font-family: 'Courier New';
+}
+p.docx-num-23-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-23-4 {
+  counter-reset: docx-num-23-5 0;
+}
+p.docx-num-23-5:before {
+  content: "\9";
+  counter-increment: docx-num-23-5;
+  font-family: Wingdings;
+}
+p.docx-num-23-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-23-5 {
+  counter-reset: docx-num-23-6 0;
+}
+p.docx-num-23-6:before {
+  content: "\9";
+  counter-increment: docx-num-23-6;
+  font-family: Symbol;
+}
+p.docx-num-23-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-23-6 {
+  counter-reset: docx-num-23-7 0;
+}
+p.docx-num-23-7:before {
+  content: "o\9";
+  counter-increment: docx-num-23-7;
+  font-family: 'Courier New';
+}
+p.docx-num-23-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-23-7 {
+  counter-reset: docx-num-23-8 0;
+}
+p.docx-num-23-8:before {
+  content: "\9";
+  counter-increment: docx-num-23-8;
+  font-family: Wingdings;
+}
+p.docx-num-23-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-6-0:before {
+  content: ""counter(docx-num-6-0, decimal)".\9";
+  counter-increment: docx-num-6-0;
+}
+p.docx-num-6-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-6-0 {
+  counter-reset: docx-num-6-1 0;
+}
+p.docx-num-6-1:before {
+  content: ""counter(docx-num-6-1, decimal)".\9";
+  counter-increment: docx-num-6-1;
+}
+p.docx-num-6-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-6-1 {
+  counter-reset: docx-num-6-2 0;
+}
+p.docx-num-6-2:before {
+  content: ""counter(docx-num-6-2, decimal)".\9";
+  counter-increment: docx-num-6-2;
+}
+p.docx-num-6-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-6-2 {
+  counter-reset: docx-num-6-3 0;
+}
+p.docx-num-6-3:before {
+  content: ""counter(docx-num-6-3, decimal)".\9";
+  counter-increment: docx-num-6-3;
+}
+p.docx-num-6-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-6-3 {
+  counter-reset: docx-num-6-4 0;
+}
+p.docx-num-6-4:before {
+  content: ""counter(docx-num-6-4, decimal)".\9";
+  counter-increment: docx-num-6-4;
+}
+p.docx-num-6-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-6-4 {
+  counter-reset: docx-num-6-5 0;
+}
+p.docx-num-6-5:before {
+  content: ""counter(docx-num-6-5, decimal)".\9";
+  counter-increment: docx-num-6-5;
+}
+p.docx-num-6-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-6-5 {
+  counter-reset: docx-num-6-6 0;
+}
+p.docx-num-6-6:before {
+  content: ""counter(docx-num-6-6, decimal)".\9";
+  counter-increment: docx-num-6-6;
+}
+p.docx-num-6-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-6-6 {
+  counter-reset: docx-num-6-7 0;
+}
+p.docx-num-6-7:before {
+  content: ""counter(docx-num-6-7, decimal)".\9";
+  counter-increment: docx-num-6-7;
+}
+p.docx-num-6-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-6-7 {
+  counter-reset: docx-num-6-8 0;
+}
+p.docx-num-6-8:before {
+  content: ""counter(docx-num-6-8, decimal)".\9";
+  counter-increment: docx-num-6-8;
+}
+p.docx-num-6-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-14-0:before {
+  content: "\9";
+  counter-increment: docx-num-14-0;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-14-0 {
+  counter-reset: docx-num-14-1 0;
+}
+p.docx-num-14-1:before {
+  content: "o\9";
+  counter-increment: docx-num-14-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-14-1 {
+  counter-reset: docx-num-14-2 0;
+}
+p.docx-num-14-2:before {
+  content: "\9";
+  counter-increment: docx-num-14-2;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-14-2 {
+  counter-reset: docx-num-14-3 0;
+}
+p.docx-num-14-3:before {
+  content: "\9";
+  counter-increment: docx-num-14-3;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-14-3 {
+  counter-reset: docx-num-14-4 0;
+}
+p.docx-num-14-4:before {
+  content: "\9";
+  counter-increment: docx-num-14-4;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-14-4 {
+  counter-reset: docx-num-14-5 0;
+}
+p.docx-num-14-5:before {
+  content: "\9";
+  counter-increment: docx-num-14-5;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-14-5 {
+  counter-reset: docx-num-14-6 0;
+}
+p.docx-num-14-6:before {
+  content: "\9";
+  counter-increment: docx-num-14-6;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-14-6 {
+  counter-reset: docx-num-14-7 0;
+}
+p.docx-num-14-7:before {
+  content: "\9";
+  counter-increment: docx-num-14-7;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-14-7 {
+  counter-reset: docx-num-14-8 0;
+}
+p.docx-num-14-8:before {
+  content: "\9";
+  counter-increment: docx-num-14-8;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-14-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-10-0:before {
+  content: ""counter(docx-num-10-0, decimal)".\9";
+  counter-increment: docx-num-10-0;
+}
+p.docx-num-10-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-10-0 {
+  counter-reset: docx-num-10-1 0;
+}
+p.docx-num-10-1:before {
+  content: ""counter(docx-num-10-1, decimal)".\9";
+  counter-increment: docx-num-10-1;
+}
+p.docx-num-10-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-10-1 {
+  counter-reset: docx-num-10-2 0;
+}
+p.docx-num-10-2:before {
+  content: ""counter(docx-num-10-2, decimal)".\9";
+  counter-increment: docx-num-10-2;
+}
+p.docx-num-10-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-10-2 {
+  counter-reset: docx-num-10-3 0;
+}
+p.docx-num-10-3:before {
+  content: ""counter(docx-num-10-3, decimal)".\9";
+  counter-increment: docx-num-10-3;
+}
+p.docx-num-10-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-10-3 {
+  counter-reset: docx-num-10-4 0;
+}
+p.docx-num-10-4:before {
+  content: ""counter(docx-num-10-4, decimal)".\9";
+  counter-increment: docx-num-10-4;
+}
+p.docx-num-10-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-10-4 {
+  counter-reset: docx-num-10-5 0;
+}
+p.docx-num-10-5:before {
+  content: ""counter(docx-num-10-5, decimal)".\9";
+  counter-increment: docx-num-10-5;
+}
+p.docx-num-10-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-10-5 {
+  counter-reset: docx-num-10-6 0;
+}
+p.docx-num-10-6:before {
+  content: ""counter(docx-num-10-6, decimal)".\9";
+  counter-increment: docx-num-10-6;
+}
+p.docx-num-10-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-10-6 {
+  counter-reset: docx-num-10-7 0;
+}
+p.docx-num-10-7:before {
+  content: ""counter(docx-num-10-7, decimal)".\9";
+  counter-increment: docx-num-10-7;
+}
+p.docx-num-10-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-10-7 {
+  counter-reset: docx-num-10-8 0;
+}
+p.docx-num-10-8:before {
+  content: ""counter(docx-num-10-8, decimal)".\9";
+  counter-increment: docx-num-10-8;
+}
+p.docx-num-10-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-22-0:before {
+  content: "\9";
+  counter-increment: docx-num-22-0;
+  font-family: Symbol;
+}
+p.docx-num-22-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 90.00pt;
+}
+p.docx-num-22-0 {
+  counter-reset: docx-num-22-1 0;
+}
+p.docx-num-22-1:before {
+  content: "o\9";
+  counter-increment: docx-num-22-1;
+  font-family: 'Courier New';
+}
+p.docx-num-22-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 126.00pt;
+}
+p.docx-num-22-1 {
+  counter-reset: docx-num-22-2 0;
+}
+p.docx-num-22-2:before {
+  content: "\9";
+  counter-increment: docx-num-22-2;
+  font-family: Wingdings;
+}
+p.docx-num-22-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 162.00pt;
+}
+p.docx-num-22-2 {
+  counter-reset: docx-num-22-3 0;
+}
+p.docx-num-22-3:before {
+  content: "\9";
+  counter-increment: docx-num-22-3;
+  font-family: Symbol;
+}
+p.docx-num-22-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 198.00pt;
+}
+p.docx-num-22-3 {
+  counter-reset: docx-num-22-4 0;
+}
+p.docx-num-22-4:before {
+  content: "o\9";
+  counter-increment: docx-num-22-4;
+  font-family: 'Courier New';
+}
+p.docx-num-22-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 234.00pt;
+}
+p.docx-num-22-4 {
+  counter-reset: docx-num-22-5 0;
+}
+p.docx-num-22-5:before {
+  content: "\9";
+  counter-increment: docx-num-22-5;
+  font-family: Wingdings;
+}
+p.docx-num-22-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 270.00pt;
+}
+p.docx-num-22-5 {
+  counter-reset: docx-num-22-6 0;
+}
+p.docx-num-22-6:before {
+  content: "\9";
+  counter-increment: docx-num-22-6;
+  font-family: Symbol;
+}
+p.docx-num-22-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 306.00pt;
+}
+p.docx-num-22-6 {
+  counter-reset: docx-num-22-7 0;
+}
+p.docx-num-22-7:before {
+  content: "o\9";
+  counter-increment: docx-num-22-7;
+  font-family: 'Courier New';
+}
+p.docx-num-22-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 342.00pt;
+}
+p.docx-num-22-7 {
+  counter-reset: docx-num-22-8 0;
+}
+p.docx-num-22-8:before {
+  content: "\9";
+  counter-increment: docx-num-22-8;
+  font-family: Wingdings;
+}
+p.docx-num-22-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 378.00pt;
+}
+p.docx-num-15-0:before {
+  content: "\9";
+  counter-increment: docx-num-15-0;
+  font-family: Symbol;
+}
+p.docx-num-15-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-15-0 {
+  counter-reset: docx-num-15-1 0;
+}
+p.docx-num-15-1:before {
+  content: "o\9";
+  counter-increment: docx-num-15-1;
+  font-family: 'Courier New';
+}
+p.docx-num-15-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-15-1 {
+  counter-reset: docx-num-15-2 0;
+}
+p.docx-num-15-2:before {
+  content: "\9";
+  counter-increment: docx-num-15-2;
+  font-family: Wingdings;
+}
+p.docx-num-15-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-15-2 {
+  counter-reset: docx-num-15-3 0;
+}
+p.docx-num-15-3:before {
+  content: "\9";
+  counter-increment: docx-num-15-3;
+  font-family: Symbol;
+}
+p.docx-num-15-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-15-3 {
+  counter-reset: docx-num-15-4 0;
+}
+p.docx-num-15-4:before {
+  content: "o\9";
+  counter-increment: docx-num-15-4;
+  font-family: 'Courier New';
+}
+p.docx-num-15-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-15-4 {
+  counter-reset: docx-num-15-5 0;
+}
+p.docx-num-15-5:before {
+  content: "\9";
+  counter-increment: docx-num-15-5;
+  font-family: Wingdings;
+}
+p.docx-num-15-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-15-5 {
+  counter-reset: docx-num-15-6 0;
+}
+p.docx-num-15-6:before {
+  content: "\9";
+  counter-increment: docx-num-15-6;
+  font-family: Symbol;
+}
+p.docx-num-15-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-15-6 {
+  counter-reset: docx-num-15-7 0;
+}
+p.docx-num-15-7:before {
+  content: "o\9";
+  counter-increment: docx-num-15-7;
+  font-family: 'Courier New';
+}
+p.docx-num-15-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-15-7 {
+  counter-reset: docx-num-15-8 0;
+}
+p.docx-num-15-8:before {
+  content: "\9";
+  counter-increment: docx-num-15-8;
+  font-family: Wingdings;
+}
+p.docx-num-15-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-9-0:before {
+  content: "\9";
+  counter-increment: docx-num-9-0;
+  font-family: Symbol;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-9-0 {
+  counter-reset: docx-num-9-1 0;
+}
+p.docx-num-9-1:before {
+  content: "o\9";
+  counter-increment: docx-num-9-1;
+  font-family: 'Courier New';
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-9-1 {
+  counter-reset: docx-num-9-2 0;
+}
+p.docx-num-9-2:before {
+  content: "\9";
+  counter-increment: docx-num-9-2;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-9-2 {
+  counter-reset: docx-num-9-3 0;
+}
+p.docx-num-9-3:before {
+  content: "\9";
+  counter-increment: docx-num-9-3;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-9-3 {
+  counter-reset: docx-num-9-4 0;
+}
+p.docx-num-9-4:before {
+  content: "\9";
+  counter-increment: docx-num-9-4;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-9-4 {
+  counter-reset: docx-num-9-5 0;
+}
+p.docx-num-9-5:before {
+  content: "\9";
+  counter-increment: docx-num-9-5;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-9-5 {
+  counter-reset: docx-num-9-6 0;
+}
+p.docx-num-9-6:before {
+  content: "\9";
+  counter-increment: docx-num-9-6;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-9-6 {
+  counter-reset: docx-num-9-7 0;
+}
+p.docx-num-9-7:before {
+  content: "\9";
+  counter-increment: docx-num-9-7;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-9-7 {
+  counter-reset: docx-num-9-8 0;
+}
+p.docx-num-9-8:before {
+  content: "\9";
+  counter-increment: docx-num-9-8;
+  font-family: Wingdings;
+  min-height: 10.00pt;
+  font-size: 10.00pt;
+}
+p.docx-num-9-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-4-0:before {
+  content: "\9";
+  counter-increment: docx-num-4-0;
+  font-family: Symbol;
+}
+p.docx-num-4-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-4-0 {
+  counter-reset: docx-num-4-1 0;
+}
+p.docx-num-4-1:before {
+  content: "o\9";
+  counter-increment: docx-num-4-1;
+  font-family: 'Courier New';
+}
+p.docx-num-4-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-4-1 {
+  counter-reset: docx-num-4-2 0;
+}
+p.docx-num-4-2:before {
+  content: "\9";
+  counter-increment: docx-num-4-2;
+  font-family: Wingdings;
+}
+p.docx-num-4-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-4-2 {
+  counter-reset: docx-num-4-3 0;
+}
+p.docx-num-4-3:before {
+  content: "\9";
+  counter-increment: docx-num-4-3;
+  font-family: Symbol;
+}
+p.docx-num-4-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-4-3 {
+  counter-reset: docx-num-4-4 0;
+}
+p.docx-num-4-4:before {
+  content: "o\9";
+  counter-increment: docx-num-4-4;
+  font-family: 'Courier New';
+}
+p.docx-num-4-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-4-4 {
+  counter-reset: docx-num-4-5 0;
+}
+p.docx-num-4-5:before {
+  content: "\9";
+  counter-increment: docx-num-4-5;
+  font-family: Wingdings;
+}
+p.docx-num-4-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-4-5 {
+  counter-reset: docx-num-4-6 0;
+}
+p.docx-num-4-6:before {
+  content: "\9";
+  counter-increment: docx-num-4-6;
+  font-family: Symbol;
+}
+p.docx-num-4-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-4-6 {
+  counter-reset: docx-num-4-7 0;
+}
+p.docx-num-4-7:before {
+  content: "o\9";
+  counter-increment: docx-num-4-7;
+  font-family: 'Courier New';
+}
+p.docx-num-4-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-4-7 {
+  counter-reset: docx-num-4-8 0;
+}
+p.docx-num-4-8:before {
+  content: "\9";
+  counter-increment: docx-num-4-8;
+  font-family: Wingdings;
+}
+p.docx-num-4-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+p.docx-num-16-0:before {
+  content: "\9";
+  counter-increment: docx-num-16-0;
+  font-family: Symbol;
+}
+p.docx-num-16-0 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 36.00pt;
+}
+p.docx-num-16-0 {
+  counter-reset: docx-num-16-1 0;
+}
+p.docx-num-16-1:before {
+  content: "o\9";
+  counter-increment: docx-num-16-1;
+  font-family: 'Courier New';
+}
+p.docx-num-16-1 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 72.00pt;
+}
+p.docx-num-16-1 {
+  counter-reset: docx-num-16-2 0;
+}
+p.docx-num-16-2:before {
+  content: "\9";
+  counter-increment: docx-num-16-2;
+  font-family: Wingdings;
+}
+p.docx-num-16-2 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 108.00pt;
+}
+p.docx-num-16-2 {
+  counter-reset: docx-num-16-3 0;
+}
+p.docx-num-16-3:before {
+  content: "\9";
+  counter-increment: docx-num-16-3;
+  font-family: Symbol;
+}
+p.docx-num-16-3 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 144.00pt;
+}
+p.docx-num-16-3 {
+  counter-reset: docx-num-16-4 0;
+}
+p.docx-num-16-4:before {
+  content: "o\9";
+  counter-increment: docx-num-16-4;
+  font-family: 'Courier New';
+}
+p.docx-num-16-4 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 180.00pt;
+}
+p.docx-num-16-4 {
+  counter-reset: docx-num-16-5 0;
+}
+p.docx-num-16-5:before {
+  content: "\9";
+  counter-increment: docx-num-16-5;
+  font-family: Wingdings;
+}
+p.docx-num-16-5 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 216.00pt;
+}
+p.docx-num-16-5 {
+  counter-reset: docx-num-16-6 0;
+}
+p.docx-num-16-6:before {
+  content: "\9";
+  counter-increment: docx-num-16-6;
+  font-family: Symbol;
+}
+p.docx-num-16-6 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 252.00pt;
+}
+p.docx-num-16-6 {
+  counter-reset: docx-num-16-7 0;
+}
+p.docx-num-16-7:before {
+  content: "o\9";
+  counter-increment: docx-num-16-7;
+  font-family: 'Courier New';
+}
+p.docx-num-16-7 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 288.00pt;
+}
+p.docx-num-16-7 {
+  counter-reset: docx-num-16-8 0;
+}
+p.docx-num-16-8:before {
+  content: "\9";
+  counter-increment: docx-num-16-8;
+  font-family: Wingdings;
+}
+p.docx-num-16-8 {
+  display: list-item;
+  list-style-position: inside;
+  list-style-type: none;
+  text-indent: -18.00pt;
+  margin-left: 324.00pt;
+}
+.docx-wrapper {
+  counter-reset: docx-num-1-0 0 docx-num-1-1 0 docx-num-1-2 0 docx-num-1-3 0 docx-num-1-4 0 docx-num-1-5 0 docx-num-1-6 0 docx-num-1-7 0 docx-num-1-8 0 docx-num-20-0 0 docx-num-20-1 0 docx-num-20-2 0 docx-num-20-3 0 docx-num-20-4 0 docx-num-20-5 0 docx-num-20-6 0 docx-num-20-7 0 docx-num-20-8 0 docx-num-8-0 0 docx-num-8-1 0 docx-num-8-2 0 docx-num-8-3 0 docx-num-8-4 0 docx-num-8-5 0 docx-num-8-6 0 docx-num-8-7 0 docx-num-8-8 0 docx-num-18-0 0 docx-num-18-1 0 docx-num-18-2 0 docx-num-18-3 0 docx-num-18-4 0 docx-num-18-5 0 docx-num-18-6 0 docx-num-18-7 0 docx-num-18-8 0 docx-num-3-0 0 docx-num-3-1 0 docx-num-3-2 0 docx-num-3-3 0 docx-num-3-4 0 docx-num-3-5 0 docx-num-3-6 0 docx-num-3-7 0 docx-num-3-8 0 docx-num-24-0 0 docx-num-24-1 0 docx-num-24-2 0 docx-num-24-3 0 docx-num-24-4 0 docx-num-24-5 0 docx-num-24-6 0 docx-num-24-7 0 docx-num-24-8 0 docx-num-2-0 0 docx-num-2-1 0 docx-num-2-2 0 docx-num-2-3 0 docx-num-2-4 0 docx-num-2-5 0 docx-num-2-6 0 docx-num-2-7 0 docx-num-2-8 0 docx-num-25-0 0 docx-num-25-1 0 docx-num-25-2 0 docx-num-25-3 0 docx-num-25-4 0 docx-num-25-5 0 docx-num-25-6 0 docx-num-25-7 0 docx-num-25-8 0 docx-num-12-0 0 docx-num-12-1 0 docx-num-12-2 0 docx-num-12-3 0 docx-num-12-4 0 docx-num-12-5 0 docx-num-12-6 0 docx-num-12-7 0 docx-num-12-8 0 docx-num-7-0 0 docx-num-7-1 0 docx-num-7-2 0 docx-num-7-3 0 docx-num-7-4 0 docx-num-7-5 0 docx-num-7-6 0 docx-num-7-7 0 docx-num-7-8 0 docx-num-21-0 0 docx-num-21-1 0 docx-num-21-2 0 docx-num-21-3 0 docx-num-21-4 0 docx-num-21-5 0 docx-num-21-6 0 docx-num-21-7 0 docx-num-21-8 0 docx-num-19-0 0 docx-num-19-1 0 docx-num-19-2 0 docx-num-19-3 0 docx-num-19-4 0 docx-num-19-5 0 docx-num-19-6 0 docx-num-19-7 0 docx-num-19-8 0 docx-num-11-0 0 docx-num-11-1 0 docx-num-11-2 0 docx-num-11-3 0 docx-num-11-4 0 docx-num-11-5 0 docx-num-11-6 0 docx-num-11-7 0 docx-num-11-8 0 docx-num-5-0 0 docx-num-5-1 0 docx-num-5-2 0 docx-num-5-3 0 docx-num-5-4 0 docx-num-5-5 0 docx-num-5-6 0 docx-num-5-7 0 docx-num-5-8 0 docx-num-13-0 0 docx-num-13-1 0 docx-num-13-2 0 docx-num-13-3 0 docx-num-13-4 0 docx-num-13-5 0 docx-num-13-6 0 docx-num-13-7 0 docx-num-13-8 0 docx-num-17-0 0 docx-num-17-1 0 docx-num-17-2 0 docx-num-17-3 0 docx-num-17-4 0 docx-num-17-5 0 docx-num-17-6 0 docx-num-17-7 0 docx-num-17-8 0 docx-num-26-0 0 docx-num-26-1 0 docx-num-26-2 0 docx-num-26-3 0 docx-num-26-4 0 docx-num-26-5 0 docx-num-26-6 0 docx-num-26-7 0 docx-num-26-8 0 docx-num-23-0 0 docx-num-23-1 0 docx-num-23-2 0 docx-num-23-3 0 docx-num-23-4 0 docx-num-23-5 0 docx-num-23-6 0 docx-num-23-7 0 docx-num-23-8 0 docx-num-6-0 0 docx-num-6-1 0 docx-num-6-2 0 docx-num-6-3 0 docx-num-6-4 0 docx-num-6-5 0 docx-num-6-6 0 docx-num-6-7 0 docx-num-6-8 0 docx-num-14-0 0 docx-num-14-1 0 docx-num-14-2 0 docx-num-14-3 0 docx-num-14-4 0 docx-num-14-5 0 docx-num-14-6 0 docx-num-14-7 0 docx-num-14-8 0 docx-num-10-0 0 docx-num-10-1 0 docx-num-10-2 0 docx-num-10-3 0 docx-num-10-4 0 docx-num-10-5 0 docx-num-10-6 0 docx-num-10-7 0 docx-num-10-8 0 docx-num-22-0 0 docx-num-22-1 0 docx-num-22-2 0 docx-num-22-3 0 docx-num-22-4 0 docx-num-22-5 0 docx-num-22-6 0 docx-num-22-7 0 docx-num-22-8 0 docx-num-15-0 0 docx-num-15-1 0 docx-num-15-2 0 docx-num-15-3 0 docx-num-15-4 0 docx-num-15-5 0 docx-num-15-6 0 docx-num-15-7 0 docx-num-15-8 0 docx-num-9-0 0 docx-num-9-1 0 docx-num-9-2 0 docx-num-9-3 0 docx-num-9-4 0 docx-num-9-5 0 docx-num-9-6 0 docx-num-9-7 0 docx-num-9-8 0 docx-num-4-0 0 docx-num-4-1 0 docx-num-4-2 0 docx-num-4-3 0 docx-num-4-4 0 docx-num-4-5 0 docx-num-4-6 0 docx-num-4-7 0 docx-num-4-8 0 docx-num-16-0 0 docx-num-16-1 0 docx-num-16-2 0 docx-num-16-3 0 docx-num-16-4 0 docx-num-16-5 0 docx-num-16-6 0 docx-num-16-7 0 docx-num-16-8 0;
+}
+</style><div class="docx-wrapper"><section class="docx" style="padding: 56.7pt 42.5pt 56.7pt 85.05pt; width: 595.3pt; min-height: 841.9pt;"><article><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Что такое Портал государственных услуг Министерства Финансов и какие услуги он предоставляет?</span></p><p></p><p><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Портал государственных услуг Министерства Финансов Республики Таджикистан</span><span style="font-family: Montserrat;"> — это электронная платформа, созданная для предоставления гражданам и юридическим лицам доступа к государственным услугам, предоставляемым Минист</span><span id="_GoBack"></span><span style="font-family: Montserrat;">ерством финансов Таджикистана. Портал позволяет пользователям удобно и быстро получать нужные услуги в цифровом формате, что значительно упрощает взаимодействие с государственными органами и ускоряет процесс получения услуг.</span></p><p><span style="font-family: Montserrat;">Основные возможности портала:</span></p><p class="docx-num-5-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Создание учетной записи</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Граждане могут создать личную учетную запись на портале, что позволяет им эффективно управлять своими запросами и следить за статусом поданных заявок.</span></p><p class="docx-num-5-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Доступ к услугам</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> регистрации на портале пользователь может найти и выбрать нужную услугу из широкого перечня, который включает более 40 различных услуг Министерства финансов.</span></p><p class="docx-num-5-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Отправка запросов</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Портал позволяет гражданам и организациям подавать электронные запросы для получения различных государственных услуг без необходимости личного визита в государственные учреждения.</span></p><p><span style="font-family: Montserrat;">Пример услуг, доступных на портале:</span></p><p class="docx-num-6-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Документ, подтверждающий статус резидента Республики Таджикистан</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Услуга для получения официального подтверждения статуса резидента.</span></p><p class="docx-num-6-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Сертификат профессионального бухгалтера</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Услуга для получения сертификата, подтверждающего квалификацию бухгалтера.</span></p><p class="docx-num-6-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Квалификационный аттестат аудитора</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Услуга для получения аттестата, который подтверждает квалификацию аудитора.</span></p><p class="docx-num-6-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Деятельность ломбарда</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Услуга для регистрации и получения лицензии на осуществление деятельности ломбарда.</span></p><p class="docx-num-6-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Биржевая деятельность</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Услуга для получения разрешения на осуществление биржевой деятельности.</span></p><p class="docx-num-6-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Сертификация драгоценных металлов и камней</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Услуга, предоставляющая возможность сертифицировать драгоценные металлы и камни, что важно для их продажи и оборота на рынке.</span></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как создать учетную запись?</span></p><p></p><p><span style="font-family: Montserrat;">Для того чтобы создать учетную запись, необходимо пройти процедуру регистрации, которая включает несколько шагов, в зависимости от того, регистрируется ли физическое или юридическое лицо.</span></p><p><span style="font-family: Montserrat; color: rgb(0, 0, 0);">1. </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Регистрация физического лица</span></p><p style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">Чтобы зарегистрироваться как физическое лицо, необходимо заполнить следующие поля на странице регистрации:</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Имя</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Введите ваше имя.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Фамилия</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Введите вашу фамилию.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Отчество</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Введите ваше отчество.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Серийный номер паспорта</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Укажите ваш серийный номер паспорта.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Пароль</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Создайте безопасный пароль для своей учетной записи.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Подтверждение пароля</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Повторите</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);"> введенный пароль для подтверждения.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">ИНН</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Укажите ваш индивидуальный номер налогоплательщика (ИНН).</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Email</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Введите действующий адрес электронной почты.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Телефон</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Укажите номер мобильного телефона.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Получить код</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Запросите</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);"> код подтверждения, который будет отправлен на ваш телефон или </span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">email</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-7-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; font-weight: bold; color: rgb(0, 0, 0);">Ввод кода</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">: Введите полученный код для завершения регистрации.</span></p><p class="docx_a6" style="margin-left: 18pt;"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">После заполнения и подтверждения всех полей, учетная запись для физического лица будет успешно создана.</span></p><p><span style="font-family: Montserrat;">2. </span><span class="docx_a5" style="font-family: Montserrat; font-weight: normal; color: rgb(0, 0, 0);">Регистрация юридического лица</span></p><p class="docx_a6"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Для регистрации юридического лица необходимо предоставить информацию как о самой организации, так и о руководителе.</span></p><p><span class="docx_a5" style="font-family: Montserrat; font-weight: normal; color: rgb(0, 0, 0);">Данные организации:</span></p><p class="docx-num-8-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Название организации</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите полное наименование вашей организации.</span></p><p class="docx-num-8-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">ИНН организации</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Введите ИНН вашей организации.</span></p><p class="docx-num-8-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Адрес организации</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите юридический адрес организации.</span></p><p><span class="docx_a5" style="font-family: Montserrat; font-weight: normal; color: rgb(0, 0, 0);">Данные руководителя:</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Имя</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите имя руководителя.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Фамилия</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите фамилию руководителя.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Отчество</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите отчество руководителя.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Серийный номер паспорта</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите серийный номер паспорта руководителя.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Пароль</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Создайте пароль для учетной записи руководителя.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Подтверждение пароля</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Повторите</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> введенный пароль для подтверждения.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">ИНН</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите ИНН руководителя.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Email</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Введите действующий адрес электронной почты.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Телефон</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите контактный номер телефона.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Получить код</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Запросите</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> код подтверждения, который будет отправлен на указанный телефон или </span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">email</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-9-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Ввод кода</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Введите полученный код для завершения регистрации.</span></p><p class="docx_a6"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">После заполнения и подтверждения всех полей, учетная запись для юридического лица будет успешно создана.</span></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как войти в свою учетную запись?</span></p><p class="docx_a6"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Для того чтобы войти в свою учетную запись, необходимо пройти процедуру авторизации. Эта процедура одинаковая как для физических, так и для юридических лиц.</span></p><p><span class="docx_a5" style="font-family: Montserrat; font-weight: normal; color: rgb(0, 0, 0);">Шаги для авторизации физического или юридического лица:</span></p><p class="docx_a6 docx-num-10-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Логин (номер телефона пользователя)</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Введите номер мобильного телефона, который вы использовали при регистрации вашей учетной записи.</span></p><p class="docx_a6 docx-num-10-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Пароль (</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Password</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">)</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Введите ваш пароль, который был установлен во время регистрации. Убедитесь, что вы вводите его правильно, включая все символы, заглавные и строчные буквы.</span></p><p class="docx_a6 docx-num-10-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Отправить код</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Нажмите на кнопку "Отправить код". После этого вам будет отправлен код подтверждения на номер телефона, который вы указали при регистрации.</span></p><p class="docx_a6 docx-num-10-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Код</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Введите код, который вы получили на указанный вами контактный номер.</span></p><p class="docx_a6 docx-num-10-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Вход</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>После </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">того</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> как вы введете правильный код подтверждения, нажмите кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Вход"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">, чтобы завершить процесс авторизации и войти в свою учетную запись.</span></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как восстановить пароль</span><span lang="en-US" style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">?</span></p><p class="docx_a6"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Для восстановления пароля необходимо выполнить несколько простых шагов. Если вы забыли свой пароль, можно сбросить его и создать новый, следуя инструкциям на странице восстановления пароля.</span></p><p><span class="docx_a5" style="font-family: Montserrat; font-weight: normal; color: rgb(0, 0, 0);">Шаги для восстановления пароля:</span></p><p class="docx_a6 docx-num-11-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Перейдите на страницу восстановления пароля</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: На</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> странице авторизации найдите и нажмите кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Забыли пароль?"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. Это перенаправит вас на страницу, где вы сможете сбросить текущий пароль и создать новый.</span></p><p class="docx_a6 docx-num-11-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Введите телефон</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Введите номер мобильного телефона, который вы использовали при регистрации. Этот номер будет использован для отправки кода подтверждения.</span></p><p class="docx_a6 docx-num-11-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Создайте новый пароль</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Введите новый пароль, который вы хотите установить для своей учетной записи.</span></p><p class="docx_a6 docx-num-11-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Подтвердите новый пароль</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Повторите новый пароль для его подтверждения. Убедитесь, что оба введенных пароля совпадают.</span></p><p class="docx_a6 docx-num-11-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Отправьте код</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Нажмите кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Отправить код"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. На указанный вами номер телефона будет отправлен код подтверждения.</span></p><p class="docx_a6 docx-num-11-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Введите код</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>Введите полученный код в соответствующее поле. Этот код служит для подтверждения вашей личности и для того, чтобы убедиться, что вы являетесь владельцем учетной записи.</span></p><p class="docx_a6 docx-num-11-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Нажмите "Вход"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">:</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"><br>После </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">того</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> как вы введете правильный код подтверждения и новый пароль, нажмите кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Вход"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> для завершения восстановления пароля.</span></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Что такое аутентификация на и как ее пройти?</span></p><p></p><p><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Аутентификация</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> — это процесс подтверждения личности пользователя. Этот процесс необходим для повышения безопасности и уверенности в том, что доступ к учетной записи имеют только уполномоченные пользователи.</span></p><p><span style="font-family: Montserrat;">Шаги для прохождения аутентификации:</span></p><p class="docx_a6 docx-num-12-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Перейдите на страницу учетной записи</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Войдите в свою учетную запись на Портале государственных услуг, используя логин и пароль, которые вы установили при регистрации.</span></p><p class="docx_a6 docx-num-12-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Нажмите на кнопку «Аутентификация»</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: На</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> странице вашей учетной записи будет кнопка </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Аутентификация"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. Нажмите на нее, чтобы начать процесс аутентификации.</span></p><p class="docx_a6 docx-num-12-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Загрузите необходимые документы</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> того как вы нажмете кнопку для аутентификации, вам будет предложено загрузить следующие документы:</span></p><p class="docx-num-12-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Паспорт гражданина Республики Таджикистан (Передняя сторона)</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Загрузите</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> изображение передней стороны вашего паспорта.</span></p><p class="docx-num-12-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Паспорт гражданина Республики Таджикистан (Задняя сторона)</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Загрузите</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> изображение задней стороны вашего паспорта.</span></p><p class="docx-num-12-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">ИНН</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Загрузите</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> документ, подтверждающий ваш индивидуальный номер налогоплательщика (ИНН).</span></p><p class="docx_a6 docx-num-12-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Загрузка и проверка документов</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> загрузки всех указанных документов они будут отправлены на проверку администратору системы. Администратор проверит подлинность документов и соответствие их требованиям.</span></p><p class="docx_a6 docx-num-12-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Завершение аутентификации</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Если</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> все документы будут успешно проверены и признаны подлинными, ваша учетная запись будет аутентифицирована, и вы получите уведомление о завершении процесса.</span></p><p></p><p></p><p></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как подать заявку на получение услуги?</span></p><p class="docx_a6"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Для того чтобы подать заявку на получение услуги, необходимо выполнить несколько шагов, описанных ниже.</span></p><p><span style="font-family: Montserrat;">Шаги для подачи заявки на получение услуги:</span></p><p class="docx_a6 docx-num-13-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Ознакомление с услугой</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Перейдите на страницу с описанием нужной вам услуги. Ознакомьтесь с требованиями и условиями получения услуги, чтобы понять, что именно нужно предоставить для оформления заявки.</span></p><p class="docx_a6 docx-num-13-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Нажмите на кнопку «Оформить запрос»</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> того как вы ознакомились с услугой, найдите и нажмите на кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Оформить запрос"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. Это перенаправит вас на страницу для заполнения заявки.</span></p><p class="docx_a6 docx-num-13-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Заполнение формы заявки</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: На</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> странице оформления заявки вам нужно будет заполнить все необходимые поля, связанные с выбранной услугой. Это могут быть данные о вас, информация о компании (если это юридическое лицо), а также другие обязательные данные, которые зависят от типа услуги.</span></p><p class="docx_a6 docx-num-13-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Загрузка необходимых документов</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">В</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> процессе оформления заявки вам может потребоваться загрузить дополнительные документы, подтверждающие ваше право на получение услуги. Убедитесь, что документы загружены в нужном формате и соответствуют требованиям (например, сканы паспорта, ИНН и другие).</span></p><p class="docx_a6 docx-num-13-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Сохранение и отправка заявки</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> того как вы заполните все поля формы и загрузите документы, проверьте все введенные данные. Если все правильно, нажмите кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Отправить"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. Это отправит вашу заявку на рассмотрение уполномоченным лицам.</span></p><p class="docx_a6 docx-num-13-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Рассмотрение заявки</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> отправки заявки она будет передана на рассмотрение ответственным лицам. В зависимости от типа услуги и требований, они могут связаться с вами для уточнения дополнительных деталей или для подтверждения предоставленных документов.</span></p><p><span style="font-family: Montserrat;">Важные моменты:</span></p><p class="docx-num-14-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Убедитесь, что все поля формы заполнены корректно и все необходимые документы загружены.</span></p><p class="docx-num-14-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">После отправки заявки вы получите уведомление о том, что ваша заявка поступила на рассмотрение. В случае необходимости вас могут попросить предоставить дополнительные документы или информацию.</span></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как оплатить услугу?</span></p><p style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">После того как вы отправили заявку на получение услуги, вам будет предложено оплатить соответствующую услугу. Процесс оплаты включает несколько шагов, которые зависят от выбранного вами способа оплаты.</span></p><p><span style="font-family: Montserrat;">Шаги для оплаты услуги:</span></p><p class="docx_a6 docx-num-17-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Получение реквизитов для оплаты</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> отправки вашей заявки на номер мобильного телефона, указанный при регистрации, придет смс-сообщение с реквизитами для оплаты и общей суммой для оплаты, включая:</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Счет оплаты</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: 0000000001</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Цена обработки заявления</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: сумма в сомони.</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Цена услуги</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: сумма в сомони.</span></p><p class="docx_a6 docx-num-17-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Выбор способа оплаты</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Вы можете оплатить услугу через один из следующих электронных кошельков:</span></p><p class="docx_a3 docx-num-18-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Alif</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);"> </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Mobi</span></p><p class="docx_a3 docx-num-18-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Spitamen</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);"> </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Pay</span></p><p class="docx_a3 docx-num-18-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Амонат</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);"> </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">мобайл</span></p><p class="docx_a6 docx-num-17-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Пример оплаты через </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Alif</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Mobi</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Для</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> оплаты через </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Alif</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Mobi</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> выполните следующие шаги:</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Откройте приложение </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Alif</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);"> </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Mobi</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Перейдите в раздел </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">"Все услуги"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">В списке услуг выберите </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">"Государственные услуги"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">В открывшемся списке найдите и выберите </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">"Услуги Министерства Финансов РТ"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx_a6 docx-num-17-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Заполнение полей для оплаты</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: На</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> следующем экране вам нужно будет ввести следующие данные:</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Номер счета</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Введите номер счета, указанный в смс-сообщении (например, 0000000001).</span></p><p class="docx-num-17-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Сумма оплаты</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Введите сумму, указанную в смс-сообщении, для оплаты услуги.</span></p><p class="docx_a6 docx-num-17-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Подтверждение и оплата</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> того как вы заполнили все необходимые поля, нажмите кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Оплатить"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">.</span></p><p class="docx_a6 docx-num-17-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Получение квитанции</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> успешной оплаты вам на номер телефона поступит смс-сообщение со ссылкой на </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">квитанцию об оплате</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">.</span></p><p class="docx_a6 docx-num-17-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Статус заявки</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Как</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> только оплата будет произведена и подтверждена, статус вашей заявки изменится с </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Не оплачено"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> на </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Оплачено"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. Это означает, что заявка теперь будет рассмотрена и выполнена соответствующими уполномоченными органами.</span></p><p></p><p></p><p></p><p></p><p></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как получить услугу</span><span lang="en-US" style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">?</span></p><p style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">Для того чтобы получить услугу, необходимо выполнить несколько шагов после того, как ваша заявка будет обработана.</span></p><p><span style="font-family: Montserrat;">Шаги для получения услуги:</span></p><p class="docx_a6 docx-num-19-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Обработка заявки</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> того как ваша заявка будет успешно обработана, предоставляемый документ будет оформлен на бланке Министерства Финансов, с учетом всех необходимых реквизитов:</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Подпись</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Печать</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Электронная цифровая подпись</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">QR код</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> для подтверждения подлинности цифрового документа.</span></p><p class="docx_a6 docx-num-19-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Получение уведомления</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> оформления и подготовки документа на бланке Министерства Финансов, на номер телефона пользователя придет смс-сообщение, уведомляющее о том, что документ готов и доступен для получения.</span></p><p class="docx_a6 docx-num-19-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Получение электронного документа</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Вы можете получить </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">электронную версию документа</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> в своем </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">личном кабинете</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> на портале. Для этого нужно:</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Войти в свою учетную запись.</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Перейти в раздел, где хранятся все документы, и найти нужный документ.</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Скачайте его в формате PDF.</span></p><p class="docx_a6 docx-num-19-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Получение бумажной версии</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Если</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> вам нужна бумажная версия документа, вы можете получить ее в </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">общем отделе Министерства Финансов</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. В этом случае вам необходимо:</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Посетить отдел Министерства Финансов.</span></p><p class="docx-num-19-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Предоставить подтверждающие данные или квитанцию о том, что вы подали заявку и оплатили услугу.</span></p><p class="docx_a6 docx-num-19-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Подтверждение подлинности документа</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Для</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> подтверждения подлинности цифрового документа вы можете использовать </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">QR код</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">, который будет прикреплен к документу. Сканирование QR кода позволит вам удостовериться в подлинности предоставленного документа.</span></p><p><span style="font-family: Montserrat;">Важные моменты:</span></p><p class="docx-num-20-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Документ, полученный через портал, будет иметь официальную </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">электронную цифровую подпись</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">, которая подтверждает его подлинность и юридическую силу.</span></p><p class="docx-num-20-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Вы можете выбрать, какой вариант получения документа вам удобнее — электронный или бумажный.</span></p><p class="docx-num-20-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">QR код в документе позволяет вам проверить его подлинность через систему Министерства Финансов.</span></p><p></p><p></p><p></p><p></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как узнать статус и результаты полученных услуг?</span></p><p class="docx_a6"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Для того чтобы узнать статус и результаты полученных, необходимо выполнить следующие шаги:</span></p><p><span style="font-family: Montserrat;">Шаги для проверки статуса и результатов услуг:</span></p><p class="docx_a6 docx-num-21-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Откройте вкладку «Документы и данные»</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> входа в личный кабинет перейдите в раздел </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Документы и данные"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">, который обычно находится в меню вашего профиля.</span></p><p class="docx_a6 docx-num-21-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Выберите вкладку «Приобретенные услуги»</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">В</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> разделе </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Документы и данные"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> найдите и выберите вкладку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Приобретенные услуги"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. Это откроет реестр всех услуг, которые вы запросили через портал.</span></p><p class="docx_a6 docx-num-21-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Просмотр отправленных заявок и полученных документов</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">В</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> реестре </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Приобретенные услуги"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> вы сможете увидеть:</span></p><p class="docx_a3 docx-num-22-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Список всех </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">отправленных заявок</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">.</span></p><p class="docx_a3 docx-num-22-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Статус каждой заявки (например, «Не оплачено», «Оплачено», «Обработано», «Получено»).</span></p><p class="docx_a3 docx-num-22-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Полученные документы</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">, такие как сканы или электронные версии документов, которые были предоставлены после обработки заявок.</span></p><p class="docx_a6 docx-num-21-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Получение дополнительной информации о статусе</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Вы можете нажать на каждую заявку, чтобы узнать более подробную информацию о ее статусе или просмотреть сам документ</span></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как связаться с поддержкой</span><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">?</span></p><p class="docx_a6"><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Для того чтобы связаться с поддержкой, необходимо заполнить специальную форму на странице профиля. Вот шаги, которые нужно выполнить:</span></p><p><span style="font-family: Montserrat;">Шаги для обращения в поддержку:</span></p><p class="docx_a6 docx-num-24-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Перейдите на страницу профиля</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Войдите в свою учетную запись на портале, используя логин и пароль.</span></p><p class="docx_a6 docx-num-24-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Откройте вкладку «Поддержка»</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: На</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> странице вашего профиля найдите вкладку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Поддержка"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> и выберите ее. Это откроет форму для отправки запроса в службу поддержки.</span></p><p class="docx_a6 docx-num-24-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Заполните форму для отправки вопроса</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">В</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> форме для связи с поддержкой нужно будет заполнить следующие поля:</span></p><p class="docx-num-24-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Телефон</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Укажите ваш контактный номер телефона.</span></p><p class="docx-num-24-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Email</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: Введите действующий адрес электронной почты.</span></p><p class="docx-num-24-1" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0);">Описание вопроса</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">: </span><span style="font-family: Montserrat; color: rgb(0, 0, 0);">В</span><span style="font-family: Montserrat; color: rgb(0, 0, 0);"> этом поле подробно опишите ваш вопрос или проблему, с которой вы столкнулись. Чем точнее будет описание, тем быстрее и эффективнее вам смогут помочь.</span></p><p class="docx_a6 docx-num-24-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Отправьте запрос</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: После</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> того как вы заполнили все необходимые поля, нажмите кнопку </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"Отправить"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">. Ваш запрос будет направлен в службу поддержки, и они свяжутся с вами для решения вашего вопроса.</span></p><p></p><p></p><p class="docx_2 docx-num-2-0"><span style="font-family: Montserrat; font-weight: bold; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Как начать переписку с исполнителем заявки по вопросу предоставленной услуги?</span></p><p style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">После того как заявка</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);"> пользователя</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);"> перейдет на стадию «На исполнение», </span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">и</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);"> если исполнитель решит, что необходимо обсудить с </span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">заявителем</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);"> дополнительные детали заявки (например, неполноту заполнения, корректность документов и т. д.), будет создан чат между вами и исполнителем для дальнейшего обсуждения</span><span lang="null" style="font-family: Montserrat, &quot;Times New Roman&quot;; color: rgb(0, 0, 0);">.</span></p><p><span style="font-family: Montserrat;">Шаги для начала переписки с исполнителем:</span></p><p class="docx_a6 docx-num-25-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Получите уведомление</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Как</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> только исполнитель создает чат, система отправит вам уведомление о том, что чат с исполнителем был создан.</span></p><p class="docx_a6 docx-num-25-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Перейдите в чат</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Перейдите в оформленную услугу </span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">и</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> после нажмите на кнопку</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> </span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Чат с исполнителем</span><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">"</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">.</span></p><p class="docx_a6 docx-num-25-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Начните переписку</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Найдите чат с исполнителем, связанный с вашей заявкой. Откройте его, и вы сможете начать переписку, задать вопросы или предоставить дополнительные данные, которые могут потребоваться для корректного завершения обработки вашей заявки.</span></p><p class="docx_a6 docx-num-25-0"><span class="docx_a5" style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">Завершение чата</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;">: Как</span><span style="font-family: Montserrat; color: rgb(0, 0, 0); min-height: 11pt; font-size: 11pt;"> только исполнитель убедится, что заявка заполнена корректно и все вопросы решены, он завершит исполнение заявки, и чат будет закрыт.</span></p><p><span style="font-family: Montserrat;">Важные моменты:</span></p><p class="docx-num-26-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Не забывайте проверять уведомления, чтобы своевременно начать переписку с исполнителем.</span></p><p class="docx-num-26-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">Все важные вопросы и уточнения касательно заявки должны быть обсуждены через чат для ускорения процесса ее обработки.</span></p><p class="docx-num-26-0" style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"><span style="font-family: Montserrat; color: rgb(0, 0, 0);">После завершения переписки и подтверждения полноты заявки, чат будет закрыт, и ваша заявка перейдет к финальной стадии обработки.</span></p><p style="margin-top: 5pt; margin-bottom: 5pt; line-height: 1;"></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></article></section></div>

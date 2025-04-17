@@ -1,0 +1,6 @@
+.wrapper-submodules-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px 0;
+}

@@ -1,0 +1,14 @@
+.wrapper-filter li {
+  border: 2px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.wrapper-filter li p {
+  font-weight: bold;
+}
+
+.wrapper-filter li p span {
+  color: var(--primary-color);
+}

@@ -1,0 +1,62 @@
+section {
+	background-color: #fff;
+	padding: 20px 28px;
+	border-radius: 10px;
+	margin-bottom: 50px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-contracts {
+	padding: 30px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.create-contracts form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	align-items: end;
+}
+
+/* Применяем ширину для элемента MuiStack-root */
+.MuiStack-root.css-10o2lyd-MuiStack-root {
+	width: 48%;
+	height: 100%;
+}
+
+/* Применяем ширину для элемента MuiFormControl-root и MuiTextField-root */
+.MuiFormControl-root.MuiTextField-root.css-17w7vnp-MuiFormControl-root-MuiTextField-root {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper-documents {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* Форма создание */
+
+.constructon__btn--active {
+	align-self: center;
+	background: rgba(23, 130, 238, 0.1);
+	margin: 0;
+}
+
+.constructon__btn--active:hover {
+	background: rgba(17, 77, 138, 0.194);
+}
+
+.contracts__docs-content {
+	display: flex;
+	gap: 30px;
+	flex-wrap: wrap;
+}
+.contracts__docs-ucard {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

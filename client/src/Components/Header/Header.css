@@ -1,0 +1,94 @@
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #00000012;
+}
+
+.wrapper-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px 0px;
+}
+
+.header-bottom-line::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__logo-text {
+  font-weight: 700;
+  max-width: 290px;
+}
+.header__logo-img {
+  max-width: 60px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 70px;
+}
+
+.nav__item--link {
+  font-weight: 600;
+}
+
+.nav__item--link:hover {
+  transition: color 0.2s ease-in-out;
+  color: #00000099;
+}
+
+/* Header-right */
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__righ-svg {
+  stroke: rgba(128, 128, 128, 0.95);
+  transition: all 0.3s;
+}
+
+.header__righ-svg:hover {
+  transition: stroke 0.2s ease-in-out;
+  stroke: rgba(158, 158, 158, 0.95);
+  cursor: pointer;
+}
+
+.header__tooltip {
+  display: flex;
+  gap: 10px;
+}
+
+.header__right .wrapper-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 15px;
+  text-decoration: none;
+  text-transform: none;
+  color: rgb(146, 146, 146);
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.header__right-uname {
+  font-weight: 600;
+}

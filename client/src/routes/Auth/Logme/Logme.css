@@ -1,0 +1,14 @@
+.btn-mui {
+	background-color: rgba(25, 118, 210, 0.04);
+	border-radius: 10px;
+	transition: background 0.2s ease-in-out;
+	margin-top: auto !important;
+}
+
+.btn-mui:hover {
+	background: rgba(25, 118, 210, 0.1);
+}
+
+.css-1uent87-MuiButtonBase-root-MuiButton-root {
+	margin-top: auto;
+}

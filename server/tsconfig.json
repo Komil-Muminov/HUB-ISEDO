@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"types": ["node", "express"],
+		"esModuleInterop": true,
+		"outDir": "../dist", // Скомпилированные файлы окажутся в dist
+		"rootDir": ".", // Указываем, что корень проекта — это текущая папка
+		"skipLibCheck": true,
+		"resolveJsonModule": true
+	},
+	"include": ["**/*.ts"], // Включаем все файлы TypeScript
+	"exclude": ["node_modules"] // Исключаем папку node_modules
+}

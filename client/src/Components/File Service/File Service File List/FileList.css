@@ -1,0 +1,25 @@
+.file-list {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px #00000050 solid;
+  padding: 20px;
+  border-radius: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.file-list__info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.file-list__info-title {
+  font-weight: bold;
+}
+
+.file-list:hover {
+  background-color: #00000007;
+}

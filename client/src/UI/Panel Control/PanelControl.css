@@ -1,0 +1,21 @@
+.panel-control {
+	background-color: #fff;
+	border-radius: 30px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 30px;
+	margin-bottom: 10px;
+}
+
+.action-buttons button,
+.back-button button {
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+.action-buttons {
+	display: flex;
+	gap: 25px;
+}

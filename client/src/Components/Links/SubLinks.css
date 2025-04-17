@@ -1,0 +1,20 @@
+.sublinks__list {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.sublinks__item {
+	position: relative;
+	border: 1px solid orange;
+	padding: 10px;
+	border-radius: 6px;
+	width: calc((100% - 10px * 3) / 4);
+	text-align: center;
+}
+
+.sublinks__item a {
+	display: block;
+	width: 100%;
+}
