@@ -1,0 +1,68 @@
+.hub-form {
+	padding: 2rem;
+	background-color: #f9f9fb;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hub-form__title {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 2rem;
+}
+
+.hub-form__section {
+	margin-bottom: 2.5rem;
+	padding: 1.5rem;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-block {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+
+.form-group label {
+	font-weight: 500;
+	color: #444;
+	margin-bottom: 0.3rem;
+	display: block;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+	width: 100%;
+	padding: 0.6rem 0.9rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: 1rem;
+	background-color: #fdfdfd;
+	transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	border-color: #4a90e2;
+	outline: none;
+}
+
+button {
+	align-self: flex-start;
+	background-color: #4a90e2;
+	color: #fff;
+	padding: 0.7rem 1.4rem;
+	font-size: 1rem;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #357ab8;
+}

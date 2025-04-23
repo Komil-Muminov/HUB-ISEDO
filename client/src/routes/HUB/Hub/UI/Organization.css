@@ -1,0 +1,85 @@
+/* Стиль для карточки */
+.organization-card {
+	background-color: #f9f9f9;
+	border-radius: 12px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	padding: 25px;
+	margin: 20px 0;
+	width: 320px;
+	max-width: 100%;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
+}
+
+.organization-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.organization-card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.organization-card h4 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin: 0;
+}
+
+.organization-card__website {
+	font-size: 14px;
+	color: #007bff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	font-weight: 500;
+}
+
+.organization-card__website:hover {
+	color: #0056b3;
+	text-decoration: underline;
+}
+
+.organization-card__content {
+	margin-top: 15px;
+	font-size: 15px;
+	color: #555;
+}
+
+.organization-card__footer {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.organization-card__type {
+	font-size: 14px;
+	color: #888;
+	font-style: italic;
+}
+
+.organization-card__file {
+	font-size: 13px;
+	color: #444;
+	margin-top: 5px;
+}
+
+.organization-card__file i {
+	margin-right: 8px;
+	color: #007bff;
+}
+
+/* Стили для кнопки "Сайт" */
+.organization-card__website {
+	font-size: 14px;
+	color: #007bff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.organization-card__website:hover {
+	color: #0056b3;
+}
