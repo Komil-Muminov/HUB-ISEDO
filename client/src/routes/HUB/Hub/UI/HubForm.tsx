@@ -1,77 +1,159 @@
-import React, { useState } from "react";
-import "./style.css";
+import { useState } from "react";
+import {
+	Form,
+	Input,
+	Button,
+	DatePicker,
+	Select,
+	Divider,
+	Row,
+	Col,
+	message,
+} from "antd";
+import dayjs, { Dayjs } from "dayjs";
+import "./HubForm.css";
 
-interface HubFormProps {
-	addCard: (newCard: any) => void;
+const { Option } = Select;
+
+interface CardData {
+	type: "ko" | "bo";
+	name: string;
+	orgType?: string;
+	tax?: string;
+	identificator?: string;
+	docNo?: string;
+	dateDoc?: Dayjs;
+	address?: string;
+	terCode?: string;
+	role?: string;
+	image?: string;
 }
 
-export const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
-	const handleSubmit = (
-		e: React.FormEvent<HTMLFormElement>,
-		type: "БО" | "КО",
-	) => {
-		e.preventDefault();
-		const form = e.currentTarget;
-		const name = (
-			form.querySelector(
-				`#${type === "БО" ? "bo" : "ko"}-org-name`,
-			) as HTMLInputElement
-		).value;
-		const comment = form.querySelector(
-			`#${type === "БО" ? "bo" : "ko"}-comment` as HTMLTextAreaElement,
-		).value;
-		const fileInput = form.querySelector(
-			`#${type === "БО" ? "bo" : "ko"}-document`,
-		) as HTMLInputElement;
-		const fileName = fileInput.files?.[0]?.name || "Файл не выбран";
+interface HubFormProps {
+	addCard: (newCard: CardData) => void;
+}
 
-		const newCard = { name, comment, fileName, type };
-		addCard(newCard); // передаем данные в родительский компонент
+const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
+	const [form] = Form.useForm<CardData>();
+	const [cardType, setCardType] = useState<"ko" | "bo">("ko");
 
-		form.reset();
+	const handleTypeChange = (value: "ko" | "bo") => {
+		setCardType(value);
 	};
 
+	const onFinish = (values: CardData) => {
+		const cardData: CardData = {
+			...values,
+			dateDoc: values.dateDoc ? dayjs(values.dateDoc) : undefined,
+		};
+		addCard(cardData);
+		form.resetFields();
+		setCardType("ko");
+		message.success("Карточка успешно добавлена!");
+	};
+
+	const renderField = (
+		name: keyof CardData,
+		label: string,
+		placeholder: string,
+		component: React.ReactNode = (
+			<Input placeholder={placeholder} className="hub-form-input" />
+		),
+		required: boolean = false,
+	) => (
+		<Col className="hub-form-col">
+			<Form.Item
+				name={name}
+				label={label}
+				rules={
+					required
+						? [{ required: true, message: `Введите ${label.toLowerCase()}!` }]
+						: []
+				}
+				className="hub-form-item"
+			>
+				{component}
+			</Form.Item>
+		</Col>
+	);
+
 	return (
-		<div className="hub-form">
-			<h2 className="hub-form__title">Форма взаимодействия через Хаб</h2>
+		<div className="hub-form-container">
+			<h2 className="hub-form-title">Новая карточка организации</h2>
+			<Form
+				form={form}
+				layout="vertical"
+				onFinish={onFinish}
+				initialValues={{ type: "ko" }}
+			>
+				<Row className="hub-form-row">
+					{renderField(
+						"type",
+						"Тип карточки",
+						"",
+						<Select onChange={handleTypeChange} className="hub-form-select">
+							<Option value="ko">КО (Организация)</Option>
+							<Option value="bo">БО (Представитель)</Option>
+						</Select>,
+					)}
+					{renderField("orgType", "Тип организации", "АО / ООО и т.д.")}
 
-			<div className="hub-form__section">
-				<h3>Бюджетная организация (БО)</h3>
-				<form className="form-block" onSubmit={(e) => handleSubmit(e, "БО")}>
-					<div className="form-group">
-						<label htmlFor="bo-org-name">Название организации</label>
-						<input type="text" id="bo-org-name" placeholder="ГУП 'Нефтехим'" />
-					</div>
-					<div className="form-group">
-						<label htmlFor="bo-document">Прикрепить документ</label>
-						<input type="file" id="bo-document" />
-					</div>
-					<div className="form-group">
-						<label htmlFor="bo-comment">Комментарий</label>
-						<textarea id="bo-comment" rows={4} placeholder="Комментарий..." />
-					</div>
-					<button type="submit">Отправить КО</button>
-				</form>
-			</div>
+					{renderField(
+						"name",
+						"Название / Имя",
+						"Название организации или имя",
+						undefined,
+						true,
+					)}
+				</Row>
 
-			<div className="hub-form__section">
-				<h3>Коммерческая организация (КО)</h3>
-				<form className="form-block" onSubmit={(e) => handleSubmit(e, "КО")}>
-					<div className="form-group">
-						<label htmlFor="ko-org-name">Название организации</label>
-						<input type="text" id="ko-org-name" placeholder="ООО 'СтройСнаб'" />
-					</div>
-					<div className="form-group">
-						<label htmlFor="ko-document">Загрузить документ</label>
-						<input type="file" id="ko-document" />
-					</div>
-					<div className="form-group">
-						<label htmlFor="ko-comment">Комментарий</label>
-						<textarea id="ko-comment" rows={4} placeholder="Комментарий..." />
-					</div>
-					<button type="submit">Отправить в БО</button>
-				</form>
-			</div>
+				{cardType === "ko" ? (
+					<>
+						<Divider className="hub-form-divider">Данные организации</Divider>
+						<Row className="hub-form-row">
+							{renderField("orgType", "Тип организации", "АО / ООО и т.д.")}
+							{renderField("tax", "ИНН", "ИНН")}
+							{renderField("identificator", "Идентификатор", "Уникальный код")}
+							{renderField("docNo", "Номер договора", "123/456")}
+							{renderField(
+								"dateDoc",
+								"Дата договора",
+								"",
+								<DatePicker
+									format="DD.MM.YYYY"
+									className="hub-form-date-picker"
+								/>,
+							)}
+							{renderField("address", "Адрес", "Город, улица")}
+							{renderField("terCode", "Код территории", "123456")}
+						</Row>
+					</>
+				) : (
+					<>
+						<Divider className="hub-form-divider">Данные представителя</Divider>
+						<Row className="hub-form-row">
+							{renderField("role", "Роль", "Должность / роль")}
+							{renderField("image", "URL изображения", "https://...")}
+						</Row>
+					</>
+				)}
+
+				<Row justify="center" style={{ marginTop: "32px" }}>
+					<Col>
+						<Form.Item>
+							<Button
+								type="primary"
+								htmlType="submit"
+								className="hub-form-submit-button"
+							>
+								Добавить карточку
+							</Button>
+						</Form.Item>
+					</Col>
+				</Row>
+			</Form>
 		</div>
 	);
 };
+
+export default HubForm;

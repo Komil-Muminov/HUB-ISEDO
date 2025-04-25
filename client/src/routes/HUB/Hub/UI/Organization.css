@@ -1,5 +1,4 @@
-/* Стиль для карточки */
-.organization-card {
+/* .organization-card {
 	background-color: #f9f9f9;
 	border-radius: 12px;
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -72,7 +71,6 @@
 	color: #007bff;
 }
 
-/* Стили для кнопки "Сайт" */
 .organization-card__website {
 	font-size: 14px;
 	color: #007bff;
@@ -82,4 +80,4 @@
 
 .organization-card__website:hover {
 	color: #0056b3;
-}
+} */

@@ -1,0 +1,92 @@
+.hub-form-container {
+	background-color: #fff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	border-radius: 16px;
+	padding: 24px;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.hub-form-title {
+	font-size: 24px;
+	font-weight: bold;
+	color: #1f2937;
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+.hub-form-row {
+	display: flex;
+}
+
+.hub-form-col {
+	flex: 0 0 33.3333%;
+	padding: 0 8px;
+	display: flex;
+}
+
+.hub-form-item {
+	max-width: 250px !important;
+}
+
+.hub-form-item label {
+	color: #374151;
+	font-weight: 500;
+}
+
+.hub-form-input,
+.hub-form-select,
+.hub-form-date-picker {
+	width: 350px !important;
+	border-radius: 8px !important;
+	border: 1px solid #d1d5db !important;
+	transition: all 0.2s ease;
+}
+
+.hub-form-input:focus,
+.hub-form-select:focus,
+.hub-form-date-picker:focus {
+	border-color: #2563eb !important;
+	box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+.hub-form-divider {
+	margin: 24px 0 !important;
+}
+
+.hub-form-divider span {
+	color: #4b5563;
+	font-weight: 600;
+}
+
+.hub-form-submit-button {
+	background-color: #2563eb !important;
+	border-color: #2563eb !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+	border-radius: 8px !important;
+	padding: 8px 24px !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+	transition: all 0.3s ease !important;
+}
+
+.hub-form-submit-button:hover {
+	background-color: #1d4ed8 !important;
+	border-color: #1d4ed8 !important;
+}
+
+/* Адаптивность */
+@media (max-width: 991px) {
+	.hub-form-col {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+
+@media (max-width: 575px) {
+	.hub-form-col {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
