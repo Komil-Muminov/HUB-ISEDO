@@ -24,9 +24,10 @@ interface TProps {
 	handleClick: (state: boolean, target?: string) => void;
 	onDelete: () => void;
 	target?: string;
+	onEdit?: () => void;
 }
 
-const KoCard = ({ data, handleClick, onDelete, target }: TProps) => {
+const KoCard = ({ data, handleClick, onDelete, target, onEdit }: TProps) => {
 	return (
 		<Card
 			title={data.name}
@@ -55,6 +56,7 @@ const KoCard = ({ data, handleClick, onDelete, target }: TProps) => {
 				>
 					Удалить
 				</Button>,
+				<Button onClick={onEdit}>Редактировать</Button>,
 			]}
 		>
 			<p className="ko-card-text">

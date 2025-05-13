@@ -12,9 +12,10 @@ interface TProps {
 	data: BoCardData;
 	onViewProfile?: () => void;
 	onDelete: () => void;
+	onEdit?: () => void;
 }
 
-const BoCard = ({ data, onViewProfile, onDelete }: TProps) => {
+const BoCard = ({ data, onViewProfile, onDelete, onEdit }: TProps) => {
 	return (
 		<Card
 			className="bo-card"
@@ -37,6 +38,7 @@ const BoCard = ({ data, onViewProfile, onDelete }: TProps) => {
 				>
 					Удалить
 				</Button>,
+				<Button onClick={onEdit}>Редактировать</Button>,
 			]}
 		>
 			<Card.Meta title={data.name} description={data.role} />

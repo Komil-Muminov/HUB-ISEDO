@@ -1,55 +1,52 @@
+// Hub.tsx
 import { useState } from "react";
-import { Row, Col, Empty, Typography } from "antd";
+import { Row, Col, Empty, Typography, Divider, Modal, Drawer } from "antd";
 import HubForm from "./UI/HubForm";
 import KoCard from "../../../Components/Card/KoCard";
 import BoCard from "../../../Components/Card/BoCard";
-import "./Hub.css";
+import RegistryTable from "../../../Components/RegistryTable/ui";
+import EditForm from "../../../Components/EditForm/ui";
 
 const { Title } = Typography;
 
-interface CardData {
+export interface CardData {
+	id: string;
 	type: "ko" | "bo";
 	name: string;
 	orgType?: string;
 	tax?: string;
 	identificator?: string;
 	docNo?: string;
-	dateDoc?: Date | string;
+	dateDoc?: string;
 	address?: string;
 	terCode?: string;
 	role?: string;
 	image?: string;
-	target?: string;
-	id?: string;
 }
 
 const Hub = () => {
 	const [cards, setCards] = useState<CardData[]>([]);
+	const [selectedCard, setSelectedCard] = useState<CardData | null>(null);
+	const [editVisible, setEditVisible] = useState(false);
 
-	const handleClick = (state: boolean, target?: string) => {
-		console.log(`Клик по карточке: state=${state}, target=${target}`);
-	};
-
-	const addCard = (newCard: CardData) => {
-		if (!newCard.name || !["ko", "bo"].includes(newCard.type)) {
-			alert("Некорректные данные карточки");
-			return;
-		}
-
-		const isDuplicate = cards.some(
-			(card) => card.name === newCard.name && card.type === newCard.type,
-		);
-		if (isDuplicate) {
-			alert("Такая карточка уже существует!");
-			return;
-		}
-
-		newCard.id = `card-${Date.now()}`;
+	const addCard = (card: Omit<CardData, "id">) => {
+		const newCard: CardData = { ...card, id: `card-${Date.now()}` };
 		setCards((prev) => [...prev, newCard]);
 	};
 
+	const updateCard = (updated: CardData) => {
+		setCards((prev) => prev.map((c) => (c.id === updated.id ? updated : c)));
+		setSelectedCard(updated);
+	};
+
 	const deleteCard = (id: string) => {
-		setCards((prev) => prev.filter((card) => card.id !== id));
+		setCards((prev) => prev.filter((c) => c.id !== id));
+		setSelectedCard(null);
+	};
+
+	const handleRowClick = (id: string) => {
+		const card = cards.find((c) => c.id === id);
+		if (card) setSelectedCard(card);
 	};
 
 	return (
@@ -65,38 +62,57 @@ const Hub = () => {
 					cards.map((card) =>
 						card.type === "ko" ? (
 							<Col xs={24} sm={12} md={8} key={card.id}>
-								<KoCard
-									data={{
-										name: card.name,
-										orgType: card.orgType || "Не указано",
-										tax: card.tax || "Не указано",
-										identificator: card.identificator || "Не указано",
-										docNo: card.docNo || "Не указано",
-										dateDoc: card.dateDoc ? new Date(card.dateDoc) : new Date(),
-										address: card.address || "Не указано",
-										terCode: card.terCode || "Не указано",
-									}}
-									handleClick={handleClick}
-									onDelete={() => deleteCard(card.id!)}
-									target={card.target || `card-${card.id}`}
-								/>
+								<KoCard data={card} onDelete={() => deleteCard(card.id)} />
 							</Col>
 						) : (
 							<Col xs={24} sm={12} md={8} key={card.id}>
-								<BoCard
-									data={{
-										name: card.name,
-										role: card.role || "Не указано",
-										image: card.image || "",
-									}}
-									onViewProfile={() => console.log(`Подробнее о ${card.name}`)}
-									onDelete={() => deleteCard(card.id!)}
-								/>
+								<BoCard data={card} onDelete={() => deleteCard(card.id)} />
 							</Col>
 						),
 					)
 				)}
 			</Row>
+			<Divider>Реестр организаций</Divider>
+			<RegistryTable data={cards} onRowClick={handleRowClick} />
+
+			<Drawer
+				open={!!selectedCard}
+				onClose={() => setSelectedCard(null)}
+				title={`Карточка: ${selectedCard?.name}`}
+				width={400}
+			>
+				{selectedCard &&
+					(selectedCard.type === "ko" ? (
+						<KoCard
+							data={selectedCard}
+							onDelete={() => deleteCard(selectedCard.id)}
+							onEdit={() => setEditVisible(true)}
+						/>
+					) : (
+						<BoCard
+							data={selectedCard}
+							onDelete={() => deleteCard(selectedCard.id)}
+							onEdit={() => setEditVisible(true)}
+						/>
+					))}
+			</Drawer>
+
+			<Modal
+				open={editVisible}
+				onCancel={() => setEditVisible(false)}
+				footer={null}
+				title="Редактировать карточку"
+			>
+				{selectedCard && (
+					<EditForm
+						card={selectedCard}
+						onSave={(updated: CardData) => {
+							updateCard(updated);
+							setEditVisible(false);
+						}}
+					/>
+				)}
+			</Modal>
 		</div>
 	);
 };
