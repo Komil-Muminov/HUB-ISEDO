@@ -64,7 +64,7 @@ const KoCard = ({ data, handleClick, onDelete, target, onEdit }: TProps) => {
 			</p>
 			<p className="ko-card-text">
 				<CalendarOutlined className="ko-card-icon" /> Дата договора:{" "}
-				{data.dateDoc.toLocaleDateString("ru-RU")}
+				{/* {data.dateDoc.toLocaleDateString("ru-RU")} */}
 			</p>
 			<p className="ko-card-text">
 				<HomeOutlined className="ko-card-icon" /> Адрес: {data.address}

@@ -13,6 +13,8 @@ interface Props {
 const RegistryTable = ({ data, onRowClick }: Props) => {
 	const [searchText, setSearchText] = useState("");
 	const [typeFilter, setTypeFilter] = useState<string | undefined>();
+	const [orgTypeFilter, setOrgTypeFilter] = useState<string | undefined>();
+	const [roleFilter, setRoleFilter] = useState<string | undefined>();
 
 	const filteredData = data.filter((entry) => {
 		const search = searchText.toLowerCase();
@@ -20,7 +22,13 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 			entry.name.toLowerCase().includes(search) ||
 			entry.tax?.toLowerCase().includes(search) ||
 			entry.address?.toLowerCase().includes(search);
-		return matches && (!typeFilter || entry.type === typeFilter);
+		return (
+			matches &&
+			(!typeFilter || entry.type === typeFilter) &&
+			(!orgTypeFilter ||
+				entry.orgType?.toLowerCase().includes(orgTypeFilter)) &&
+			(!roleFilter || entry.role?.toLowerCase().includes(roleFilter))
+		);
 	});
 
 	const columns = [
@@ -54,6 +62,28 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 					>
 						<Option value="ko">КО</Option>
 						<Option value="bo">БО</Option>
+					</Select>
+				</Col>
+				<Col span={6}>
+					<Select
+						placeholder="Фильтр по типу организации"
+						allowClear
+						onChange={setOrgTypeFilter}
+						style={{ width: "100%" }}
+					>
+						<Option value="АО">АО</Option>
+						<Option value="ООО">ООО</Option>
+					</Select>
+				</Col>
+				<Col span={6}>
+					<Select
+						placeholder="Фильтр по роли"
+						allowClear
+						onChange={setRoleFilter}
+						style={{ width: "100%" }}
+					>
+						<Option value="Директор">Директор</Option>
+						<Option value="Менеджер">Менеджер</Option>
 					</Select>
 				</Col>
 			</Row>

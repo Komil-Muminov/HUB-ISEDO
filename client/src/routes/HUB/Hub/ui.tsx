@@ -1,4 +1,3 @@
-// Hub.tsx
 import { useState } from "react";
 import { Row, Col, Empty, Typography, Divider, Modal, Drawer } from "antd";
 import HubForm from "./UI/HubForm";
@@ -62,11 +61,19 @@ const Hub = () => {
 					cards.map((card) =>
 						card.type === "ko" ? (
 							<Col xs={24} sm={12} md={8} key={card.id}>
-								<KoCard data={card} onDelete={() => deleteCard(card.id)} />
+								<KoCard
+									data={card}
+									onDelete={() => deleteCard(card.id)}
+									onEdit={() => setEditVisible(true)}
+								/>
 							</Col>
 						) : (
 							<Col xs={24} sm={12} md={8} key={card.id}>
-								<BoCard data={card} onDelete={() => deleteCard(card.id)} />
+								<BoCard
+									data={card}
+									onDelete={() => deleteCard(card.id)}
+									onEdit={() => setEditVisible(true)}
+								/>
 							</Col>
 						),
 					)
@@ -79,7 +86,7 @@ const Hub = () => {
 				open={!!selectedCard}
 				onClose={() => setSelectedCard(null)}
 				title={`Карточка: ${selectedCard?.name}`}
-				width={400}
+				width={460}
 			>
 				{selectedCard &&
 					(selectedCard.type === "ko" ? (
