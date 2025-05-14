@@ -1,5 +1,5 @@
 import { Table, Input, Select, Row, Col } from "antd";
-import { CardData } from "../../../Pages/Hub/Hub";
+import { CardData } from "../../routes/HUB/Hub/ui";
 import { useState } from "react";
 
 const { Search } = Input;
@@ -17,27 +17,44 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 	const [roleFilter, setRoleFilter] = useState<string | undefined>();
 
 	const filteredData = data.filter((entry) => {
-		const search = searchText.toLowerCase();
+		const search = searchText.toLowerCase().trim(); // Убираем лишние пробелы
 		const matches =
-			entry.name.toLowerCase().includes(search) ||
-			entry.tax?.toLowerCase().includes(search) ||
-			entry.address?.toLowerCase().includes(search);
-		return (
-			matches &&
-			(!typeFilter || entry.type === typeFilter) &&
-			(!orgTypeFilter ||
-				entry.orgType?.toLowerCase().includes(orgTypeFilter)) &&
-			(!roleFilter || entry.role?.toLowerCase().includes(roleFilter))
-		);
+			(entry.name && entry.name.toLowerCase().includes(search)) ||
+			(entry.tax && entry.tax.toLowerCase().includes(search)) ||
+			(entry.address && entry.address.toLowerCase().includes(search));
+
+		// Фильтр по типу
+		const typeMatch = !typeFilter || entry.type === typeFilter;
+
+		// Фильтр по типу организации только для записей типа "ko"
+		const orgTypeMatch =
+			!orgTypeFilter ||
+			(entry.type === "ko" &&
+				entry.orgType?.toLowerCase() === orgTypeFilter.toLowerCase());
+
+		// Фильтр по роли только для записей типа "bo"
+		const roleMatch =
+			!roleFilter ||
+			(entry.type === "bo" &&
+				entry.role?.toLowerCase().includes(roleFilter.toLowerCase()));
+
+		return matches && typeMatch && orgTypeMatch && roleMatch;
 	});
 
 	const columns = [
 		{ title: "Название", dataIndex: "name", key: "name" },
 		{
-			title: "Тип",
+			title: "Тип карточки",
 			dataIndex: "type",
 			key: "type",
 			render: (t: string) => (t === "ko" ? "КО" : "БО"),
+		},
+		{
+			title: "Тип организации",
+			dataIndex: "orgType", // Исправляем dataIndex на "orgType"
+			key: "orgType",
+			render: (orgType: string | undefined, record: CardData) =>
+				record.type === "ko" ? orgType || "Не указан" : "Н/Д",
 		},
 		{ title: "ИНН", dataIndex: "tax", key: "tax" },
 		{ title: "Адрес", dataIndex: "address", key: "address" },
@@ -49,8 +66,10 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 				<Col span={12}>
 					<Search
 						placeholder="Поиск"
-						onSearch={(v) => setSearchText(v)}
+						onChange={(e) => setSearchText(e.target.value)} // Обновляем при каждом изменении текста
+						onSearch={(v) => setSearchText(v)} // Также поддерживаем поиск по Enter
 						allowClear
+						value={searchText} // Контролируем значение
 					/>
 				</Col>
 				<Col span={6}>
@@ -70,6 +89,7 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 						allowClear
 						onChange={setOrgTypeFilter}
 						style={{ width: "100%" }}
+						disabled={typeFilter === "bo"}
 					>
 						<Option value="АО">АО</Option>
 						<Option value="ООО">ООО</Option>
@@ -81,6 +101,12 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 						allowClear
 						onChange={setRoleFilter}
 						style={{ width: "100%" }}
+						disabled={typeFilter === "ko"}
+						showSearch
+						optionFilterProp="children"
+						filterOption={(input, option) =>
+							option?.children.toLowerCase().includes(input.toLowerCase())
+						}
 					>
 						<Option value="Директор">Директор</Option>
 						<Option value="Менеджер">Менеджер</Option>

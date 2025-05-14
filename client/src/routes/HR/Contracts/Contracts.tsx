@@ -42,13 +42,13 @@ const Contracts: React.FC = () => {
 		.map((e) => e.title);
 
 	const rows = organizations.map((org: OrganizationScheme, index) => [
-		org.id, // Добавляем id в начало строки, но не отображаем его
-		index + 1, // Номер списка
-		org.identificator, // Идентификатор
-		org.name, // Наименование
-		org.tax, // ИНН организации
-		org.orgType, // Тип организации
-		org.status, // Статус
+		org.id,
+		index + 1,
+		org.identificator,
+		org.name,
+		org.tax,
+		org.orgType,
+		org.status,
 	]);
 
 	const submodulesList: { id: number; title: string; link: string }[] = [

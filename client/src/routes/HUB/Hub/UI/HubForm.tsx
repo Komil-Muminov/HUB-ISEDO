@@ -70,6 +70,7 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 						? [{ required: true, message: `Введите ${label.toLowerCase()}!` }]
 						: []
 				}
+				required={false}
 				className="hub-form-item"
 			>
 				{component}
@@ -85,6 +86,7 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 				layout="vertical"
 				onFinish={onFinish}
 				initialValues={{ type: "ko" }}
+				requiredMark={false}
 			>
 				<Row className="hub-form-row">
 					{renderField(
@@ -95,9 +97,8 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 							<Option value="ko">КО (Организация)</Option>
 							<Option value="bo">БО (Представитель)</Option>
 						</Select>,
+						true,
 					)}
-					{renderField("orgType", "Тип организации", "АО / ООО и т.д.")}
-
 					{renderField(
 						"name",
 						"Название / Имя",
@@ -111,7 +112,16 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 					<>
 						<Divider className="hub-form-divider">Данные организации</Divider>
 						<Row className="hub-form-row">
-							{renderField("orgType", "Тип организации", "АО / ООО и т.д.")}
+							{renderField(
+								"orgType",
+								"Тип организации",
+								"",
+								<Select placeholder="Выберите тип" className="hub-form-select">
+									<Option value="АО">АО</Option>
+									<Option value="ООО">ООО</Option>
+								</Select>,
+								true,
+							)}
 							{renderField("tax", "ИНН", "ИНН")}
 							{renderField("identificator", "Идентификатор", "Уникальный код")}
 							{renderField("docNo", "Номер договора", "123/456")}
