@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { Row, Col, Empty, Typography, Divider, Modal, Drawer } from "antd";
+import {
+	Row,
+	Col,
+	Empty,
+	Typography,
+	Divider,
+	Modal,
+	Drawer,
+	Button,
+} from "antd";
 import HubForm from "./UI/HubForm";
 import KoCard from "../../../Components/Card/KoCard";
 import BoCard from "../../../Components/Card/BoCard";
 import RegistryTable from "../../../Components/RegistryTable/ui";
 import EditForm from "../../../Components/EditForm/ui";
-
+import "./Hub.css";
 const { Title } = Typography;
 
 export interface CardData {
@@ -48,11 +57,20 @@ const Hub = () => {
 		if (card) setSelectedCard(card);
 	};
 
+	const [showCreateForm, setShowCreateForm] = useState<boolean>(false);
 	return (
 		<div className="hub-container">
-			<Title level={2}>Хаб организаций</Title>
-			<HubForm addCard={addCard} />
-			<Row gutter={[16, 16]} className="hub-cards">
+			<Title level={2}>Модуль Хаб</Title>
+			<Button
+				className="hub-create-button"
+				type="primary"
+				onClick={() => setShowCreateForm((prev) => !prev)}
+			>
+				{showCreateForm ? "Скрыть форму" : "Создать организацию"}
+			</Button>
+			{showCreateForm && <HubForm addCard={addCard} />}
+			{/* Показ карточек  */}
+			{/* <Row gutter={[16, 16]} className="hub-cards">
 				{cards.length === 0 ? (
 					<Col span={24} style={{ textAlign: "center" }}>
 						<Empty description="Пока нет добавленных карточек" />
@@ -78,10 +96,8 @@ const Hub = () => {
 						),
 					)
 				)}
-			</Row>
-			<Divider>Реестр организаций</Divider>
+			</Row> */}
 			<RegistryTable data={cards} onRowClick={handleRowClick} />
-
 			<Drawer
 				open={!!selectedCard}
 				onClose={() => setSelectedCard(null)}
