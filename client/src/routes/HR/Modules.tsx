@@ -51,7 +51,7 @@ const Modules: React.FC<ModulesListScheme> = () => {
       id: 5,
       title: "Хаб",
       image: notFound,
-      link: "/primary-docs/hub",
+      link: "/isedo/hub/show",
     },
     {
       id: 6,

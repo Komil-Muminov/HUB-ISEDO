@@ -110,7 +110,7 @@ function App() {
 									element={<CreateWorker />}
 								/>
 
-								<Route path="/primary-docs/hub" element={<LazyHub />} />
+								<Route path="/isedo/hub/show" element={<LazyHub />} />
 
 								<Route path="/modules/hr/workerCard" element={<Usercard />} />
 								{/* create */}
