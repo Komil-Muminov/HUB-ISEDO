@@ -35,7 +35,7 @@ interface HubFormProps {
 
 const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 	const [form] = Form.useForm<CardData>();
-	const [cardType, setCardType] = useState<"ko" | "bo">("ko");
+	const [cardType, setCardType] = useState<"ko" | "bo" | "">("");
 
 	const handleTypeChange = (value: "ko" | "bo") => {
 		setCardType(value);
@@ -80,38 +80,42 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 
 	return (
 		<div className="hub-form-container">
-			<h2 className="hub-form-title">Новая карточка организации</h2>
 			<Form
 				form={form}
 				layout="vertical"
 				onFinish={onFinish}
-				initialValues={{ type: "ko" }}
+				initialValues={cardType ? { type: cardType } : undefined}
 				requiredMark={false}
 			>
 				<Row className="hub-form-row">
-					{renderField(
-						"type",
-						"Тип карточки",
-						"",
-						<Select onChange={handleTypeChange} className="hub-form-select">
-							<Option value="ko">КО (Организация)</Option>
-							<Option value="bo">БО (Представитель)</Option>
-						</Select>,
-						true,
-					)}
-					{renderField(
-						"name",
-						"Название / Имя",
-						"Название организации или имя",
-						undefined,
-						true,
-					)}
+					<Col span={6} offset={9}>
+						{renderField(
+							"type",
+							"Тип карточки",
+							"",
+							<Select
+								placeholder="Выберите тип"
+								onChange={handleTypeChange}
+								className="hub-form-select"
+							>
+								<Option value="ko">КО (Организация)</Option>
+								<Option value="bo">БО (Представитель)</Option>
+							</Select>,
+							true,
+						)}
+					</Col>
 				</Row>
-
 				{cardType === "ko" ? (
 					<>
 						<Divider className="hub-form-divider">Данные организации</Divider>
 						<Row className="hub-form-row">
+							{renderField(
+								"name",
+								"Наименование",
+								"Полное наименование организации",
+								undefined,
+								true,
+							)}
 							{renderField(
 								"orgType",
 								"Тип организации",
@@ -140,9 +144,13 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 					</>
 				) : (
 					<>
-						<Divider className="hub-form-divider">Данные представителя</Divider>
+						<Divider className="hub-form-divider">
+							Бюджетное организация
+						</Divider>
 						<Row className="hub-form-row">
-							{renderField("role", "Роль", "Должность / роль")}
+							<Col span={8} offset={5}>
+								{renderField("role", "Роль", "Должность / роль")}
+							</Col>
 							{renderField("image", "URL изображения", "https://...")}
 						</Row>
 					</>
@@ -156,7 +164,7 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 								htmlType="submit"
 								className="hub-form-submit-button"
 							>
-								Добавить карточку
+								Создать карточку
 							</Button>
 						</Form.Item>
 					</Col>

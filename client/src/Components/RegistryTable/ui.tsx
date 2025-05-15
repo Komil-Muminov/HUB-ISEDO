@@ -17,7 +17,7 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 	const [roleFilter, setRoleFilter] = useState<string | undefined>();
 
 	const filteredData = data.filter((entry) => {
-		const search = searchText.toLowerCase().trim(); // Убираем лишние пробелы
+		const search = searchText.toLowerCase().trim();
 		const matches =
 			(entry.name && entry.name.toLowerCase().includes(search)) ||
 			(entry.tax && entry.tax.toLowerCase().includes(search)) ||
@@ -63,13 +63,13 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 	return (
 		<div>
 			<Row gutter={[16, 16]} style={{ marginBottom: 16 }}>
-				<Col span={12}>
+				<Col span={6}>
 					<Search
 						placeholder="Поиск"
 						onChange={(e) => setSearchText(e.target.value)} // Обновляем при каждом изменении текста
-						onSearch={(v) => setSearchText(v)} // Также поддерживаем поиск по Enter
+						onSearch={(v) => setSearchText(v)}
 						allowClear
-						value={searchText} // Контролируем значение
+						value={searchText}
 					/>
 				</Col>
 				<Col span={6}>
