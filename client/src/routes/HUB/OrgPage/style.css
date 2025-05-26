@@ -1,0 +1,135 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter :wght@400;600;700&display=swap");
+
+.org-page {
+	font-family: "Inter", sans-serif;
+	width: 100%;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+
+.org-page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 40px 20px;
+	background-color: transparent;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 1200px;
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.logo {
+	font-size: 28px;
+	color: #2c3e50;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.nav-links button {
+	font-weight: 500;
+	border-radius: 8px;
+}
+
+.main-content {
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.org-card {
+	background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+	border-radius: 20px;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+	padding: 40px 30px;
+	width: 100%;
+	max-width: 800px;
+	text-align: center;
+	transition: transform 0.3s ease;
+}
+
+.org-card:hover {
+	transform: translateY(-5px);
+}
+.org-avatar {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto 20px;
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+	border: 4px solid #ddd;
+}
+
+.avatar-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.org-info {
+	text-align: left;
+	margin-top: 20px;
+	line-height: 1.8;
+}
+
+.org-info strong {
+	min-width: 90px;
+	display: inline-block;
+	color: #555;
+}
+
+.org-actions {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
+.footer {
+	width: 100%;
+	max-width: 1200px;
+	text-align: center;
+	color: #666;
+	margin-top: 40px;
+	font-size: 14px;
+}
+
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 10px;
+}
+
+.social-links a {
+	color: #2c3e50;
+	font-size: 20px;
+	transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+	color: #3498db;
+}
+
+@media (max-width: 768px) {
+	.org-card {
+		padding: 30px 20px;
+	}
+	.org-avatar {
+		width: 120px;
+		height: 120px;
+	}
+}

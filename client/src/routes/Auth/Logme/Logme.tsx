@@ -1,49 +1,62 @@
-import { Form } from "../../../UI/Form/Form";
-import { useMutation } from "@tanstack/react-query";
-import { useAuth } from "../../../API/hooks/useAuth";
 import { useNavigate } from "react-router";
-import { queryClient } from "../../../API/hooks/queryClient";
+import { Form, Input, Button, message } from "antd";
 import "./Logme.css";
 
-// RTQ
 const Logme: React.FC = () => {
 	const navigate = useNavigate();
-	const { logMe } = useAuth();
-	const logMeMutation = useMutation({
-		mutationFn: (data: { username: string; password: string }) => logMe(data),
-		onSuccess: () =>
-			// route:/modules/hr/submodules
-			navigate("/modules") &&
-			queryClient.invalidateQueries({ queryKey: ["organizations"] }),
-	});
+	const [form] = Form.useForm();
 
-	const onSubmit = (data: { username: string; password: string }) => {
-		logMeMutation.mutate(data);
+	const onFinish = (values: { username: string; password: string }) => {
+		const { username, password } = values;
+
+		if (
+			(username === "kvd" && password === "123") ||
+			(username === "bo" && password === "123") ||
+			(username === "ko" && password === "123") ||
+			(username === "km" && password === "123")
+		) {
+			localStorage.setItem("username", username);
+			console.log("Вход выполнен как:", username);
+			navigate(username === "km" ? "/km" : "/kvd");
+		} else {
+			console.log("Неверная попытка входа:", username);
+			message.error("Неверный логин или пароль");
+		}
 	};
 
 	return (
-		<>
+		<div className="logme__form-wrapper">
 			<Form
-				inputs={[
-					{
-						name: "username",
-						type: "text",
-						placeholder: "Логин",
-						classname: "input",
-					},
-					{
-						name: "password",
-						type: "password",
-						placeholder: "Введите пароль",
-						classname: "input",
-					},
-				]}
-				classname="auth-form logme__form"
-				submitText="Войти"
-				submitClassname="btn-mui"
-				onSubmit={onSubmit}
-			></Form>
-		</>
+				form={form}
+				name="logme"
+				onFinish={onFinish}
+				className="auth-form logme__form"
+				layout="vertical"
+			>
+				<Form.Item
+					label="Логин"
+					name="username"
+					rules={[{ required: true, message: "Введите логин" }]}
+				>
+					<Input className="input" placeholder="Логин" />
+				</Form.Item>
+
+				<Form.Item
+					label="Пароль"
+					name="password"
+					rules={[{ required: true, message: "Введите пароль" }]}
+				>
+					<Input.Password className="input" placeholder="Введите пароль" />
+				</Form.Item>
+
+				<Form.Item>
+					<Button type="primary" htmlType="submit" className="btn-mui">
+						Войти
+					</Button>
+				</Form.Item>
+			</Form>
+		</div>
 	);
 };
+
 export default Logme;

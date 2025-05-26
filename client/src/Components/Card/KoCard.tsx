@@ -5,39 +5,42 @@ import {
 	BankOutlined,
 	DeleteOutlined,
 } from "@ant-design/icons";
+import dayjs from "dayjs";
 import "./KoCard.css";
-
-interface KoCardData {
-	name: string;
-	orgType: string;
-	tax: string;
-	identificator: string;
-	docNo: string;
-	dateDoc: Date;
-	address: string;
-	terCode: string;
-	image?: string;
-}
+import { CardData } from "../../routes/HUB/Hub/ui";
 
 interface TProps {
-	data: KoCardData;
+	data: CardData;
 	handleClick: (state: boolean, target?: string) => void;
 	onDelete: () => void;
 	target?: string;
 	onEdit?: () => void;
+	canEdit: boolean; // Обязательный пропс
 }
 
-const KoCard = ({ data, handleClick, onDelete, target, onEdit }: TProps) => {
+const KoCard = ({
+	data,
+	handleClick,
+	onDelete,
+	target,
+	onEdit,
+	canEdit,
+}: TProps) => {
+	if (!data) {
+		return <div>Карточка не найдена</div>;
+	}
+
 	return (
 		<Card
-			title={data.name}
-			bordered
+			title={data.name || "Без названия"}
+			variant="outlined"
 			className="ko-card"
 			cover={
 				<Avatar
 					size={100}
-					src={data.image || "https://via.placeholder.com/100"} // Используем заглушку, если изображения нет
+					src={data.image || "https://via.placeholder.com/150"}
 					style={{ margin: "16px auto", display: "block" }}
+					onError={() => true}
 				/>
 			}
 			actions={[
@@ -53,27 +56,38 @@ const KoCard = ({ data, handleClick, onDelete, target, onEdit }: TProps) => {
 					icon={<DeleteOutlined />}
 					onClick={onDelete}
 					className="ko-card-button-danger"
+					disabled={!canEdit} // Отключаем удаление, если canEdit=false
 				>
 					Удалить
 				</Button>,
-				<Button onClick={onEdit}>Редактировать</Button>,
+				<Button
+					onClick={onEdit}
+					disabled={!onEdit || !canEdit} // Отключаем редактирование, если canEdit=false
+					className="ko-card-button"
+				>
+					Редактировать
+				</Button>,
 			]}
 		>
 			<p className="ko-card-text">
-				<BankOutlined className="ko-card-icon" /> Тип: {data.orgType}
+				<BankOutlined className="ko-card-icon" /> Тип:{" "}
+				{data.orgType || "Не указан"}
 			</p>
 			<p className="ko-card-text">
 				<CalendarOutlined className="ko-card-icon" /> Дата договора:{" "}
-				{/* {data.dateDoc.toLocaleDateString("ru-RU")} */}
+				{data.dateDoc ? dayjs(data.dateDoc).format("DD.MM.YYYY") : "Не указана"}
 			</p>
 			<p className="ko-card-text">
-				<HomeOutlined className="ko-card-icon" /> Адрес: {data.address}
+				<HomeOutlined className="ko-card-icon" /> Адрес:{" "}
+				{data.address || "Не указан"}
 			</p>
 			<Divider className="ko-card-divider" />
-			<Typography.Text type="secondary">ИНН: {data.tax}</Typography.Text>
+			<Typography.Text type="secondary">
+				ИНН: {data.tax || "Не указан"}
+			</Typography.Text>
 			<br />
 			<Typography.Text type="secondary">
-				ОГРН: {data.identificator}
+				ОГРН: {data.identificator || "Не указан"}
 			</Typography.Text>
 		</Card>
 	);

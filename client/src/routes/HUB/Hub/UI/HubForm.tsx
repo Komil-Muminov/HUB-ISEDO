@@ -10,24 +10,11 @@ import {
 	Col,
 	message,
 } from "antd";
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import "./HubForm.css";
+import { CardData } from "../ui";
 
 const { Option } = Select;
-
-interface CardData {
-	type: "ko" | "bo";
-	name: string;
-	orgType?: string;
-	tax?: string;
-	identificator?: string;
-	docNo?: string;
-	dateDoc?: Dayjs;
-	address?: string;
-	terCode?: string;
-	role?: string;
-	image?: string;
-}
 
 interface HubFormProps {
 	addCard: (newCard: CardData) => void;
@@ -39,16 +26,29 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 
 	const handleTypeChange = (value: "ko" | "bo") => {
 		setCardType(value);
+		form.resetFields([
+			"name",
+			"orgType",
+			"tax",
+			"identificator",
+			"docNo",
+			"dateDoc",
+			"address",
+			"terCode",
+			"role",
+			"image",
+		]);
 	};
 
 	const onFinish = (values: CardData) => {
 		const cardData: CardData = {
 			...values,
-			dateDoc: values.dateDoc ? dayjs(values.dateDoc) : undefined,
+			dateDoc: values.dateDoc ? dayjs(values.dateDoc).toISOString() : undefined,
 		};
+		console.log("Создание карточки в HubForm:", cardData); // Для отладки
 		addCard(cardData);
 		form.resetFields();
-		setCardType("ko");
+		setCardType("");
 		message.success("Карточка успешно добавлена!");
 	};
 
@@ -70,7 +70,6 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 						? [{ required: true, message: `Введите ${label.toLowerCase()}!` }]
 						: []
 				}
-				required={false}
 				className="hub-form-item"
 			>
 				{component}
@@ -142,33 +141,33 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 							{renderField("terCode", "Код территории", "123456")}
 						</Row>
 					</>
-				) : (
+				) : cardType === "bo" ? (
 					<>
 						<Divider className="hub-form-divider">
-							Бюджетное организация
+							Бюджетная организация
 						</Divider>
 						<Row className="hub-form-row">
-							<Col span={8} offset={5}>
-								{renderField("role", "Роль", "Должность / роль")}
-							</Col>
+							{renderField("name", "ФИО", "ФИО представителя", undefined, true)}
+							{renderField("role", "Роль", "Должность / роль", undefined, true)}
 							{renderField("image", "URL изображения", "https://...")}
 						</Row>
 					</>
+				) : null}
+				{cardType && (
+					<Row justify="center" style={{ marginTop: "32px" }}>
+						<Col>
+							<Form.Item>
+								<Button
+									type="primary"
+									htmlType="submit"
+									className="hub-form-submit-button"
+								>
+									Создать карточку
+								</Button>
+							</Form.Item>
+						</Col>
+					</Row>
 				)}
-
-				<Row justify="center" style={{ marginTop: "32px" }}>
-					<Col>
-						<Form.Item>
-							<Button
-								type="primary"
-								htmlType="submit"
-								className="hub-form-submit-button"
-							>
-								Создать карточку
-							</Button>
-						</Form.Item>
-					</Col>
-				</Row>
 			</Form>
 		</div>
 	);

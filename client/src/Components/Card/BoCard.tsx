@@ -1,55 +1,57 @@
-import { Card, Button, Avatar, Space } from "antd";
+import { Card, Button, Typography, Divider, Avatar } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import "./BoCard.css";
-
-interface BoCardData {
-	name: string;
-	role: string;
-	image: string;
-}
+import { CardData } from "../../routes/HUB/Hub/ui";
 
 interface TProps {
-	data: BoCardData;
-	onViewProfile?: () => void;
+	data: CardData;
 	onDelete: () => void;
 	onEdit?: () => void;
+	canEdit: boolean; // Обязательный пропс
 }
 
-const BoCard = ({ data, onViewProfile, onDelete, onEdit }: TProps) => {
+const BoCard = ({ data, onDelete, onEdit, canEdit }: TProps) => {
+	if (!data) {
+		return <div>Карточка не найдена</div>;
+	}
+
 	return (
 		<Card
+			title={data.name || "Без названия"}
+			variant="outlined"
 			className="bo-card"
 			cover={
 				<Avatar
 					size={100}
-					src={data.image}
+					src={data.image || "https://via.placeholder.com/150"}
 					style={{ margin: "16px auto", display: "block" }}
+					onError={() => true}
 				/>
 			}
 			actions={[
-				<Button type="link" onClick={onViewProfile} className="text-blue-600">
-					Подробнее
-				</Button>,
 				<Button
 					danger
 					icon={<DeleteOutlined />}
 					onClick={onDelete}
-					className="hover:bg-red-50"
+					className="bo-card-button-danger"
+					disabled={!canEdit} // Отключаем удаление, если canEdit=false
 				>
 					Удалить
 				</Button>,
-				<Button onClick={onEdit}>Редактировать</Button>,
+				<Button
+					onClick={onEdit}
+					disabled={!onEdit || !canEdit} // Отключаем редактирование, если canEdit=false
+					className="bo-card-button"
+				>
+					Редактировать
+				</Button>,
 			]}
 		>
-			<Card.Meta title={data.name} description={data.role} />
-			<Space style={{ marginTop: 8 }} wrap>
-				<Button size="small" className="text-gray-600">
-					Карточка подписей
-				</Button>
-				<Button size="small" className="text-gray-600">
-					Корреспонденция
-				</Button>
-			</Space>
+			<p className="bo-card-text">Роль: {data.role || "Не указана"}</p>
+			<Divider className="bo-card-divider" />
+			<Typography.Text type="secondary">
+				URL изображения: {data.image || "Не указан"}
+			</Typography.Text>
 		</Card>
 	);
 };

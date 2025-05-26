@@ -1,42 +1,102 @@
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Spin } from "antd";
+
 import { CardData } from "../Hub/ui";
-import KoCard from "../../../Components/Card/KoCard";
-import BoCard from "../../../Components/Card/BoCard";
-import { Typography, Spin } from "antd";
-
-const { Title } = Typography;
-
-const mockStorage: CardData[] = JSON.parse(
-	localStorage.getItem("cards") || "[]",
-);
+import { OrgCard } from "./ui/OrgCard";
+import { ContactModal } from "./ui/ContractModal";
+import { EditModal } from "./ui/EditModal";
+import { AppFooter } from "./ui/Footer";
+import "./style.css";
 
 const OrganizationPage = () => {
 	const { id } = useParams<{ id: string }>();
 	const [card, setCard] = useState<CardData | null>(null);
+	const [editVisible, setEditVisible] = useState(false);
+	const [contactVisible, setContactVisible] = useState(false);
+
+	// Моковые данные
+	const mockCard: CardData = {
+		id: "mock-id",
+		name: "Примерная организация",
+		type: "ko",
+		inn: "1234567890",
+		address: "Город, Улица, Дом",
+		email: "info@example.org",
+		phone: "+7 (123) 456-78-90",
+	};
 
 	useEffect(() => {
-		const found = mockStorage.find((c) => c.id === id);
-		setCard(found || null);
+		const storedCards = localStorage.getItem("cards");
+		if (storedCards) {
+			try {
+				const cards: CardData[] = JSON.parse(storedCards);
+				const found = cards.find((c) => c.id === id);
+				setCard(found || null);
+			} catch (error) {
+				console.error("Ошибка при чтении данных:", error);
+				setCard(null);
+			}
+		} else {
+			setCard(mockCard);
+		}
 	}, [id]);
 
-	if (!card) return <Spin tip="Загрузка..." />;
+	const updateCard = (updated: CardData) => {
+		const storedCards = JSON.parse(localStorage.getItem("cards") || "[]");
+		const updatedCards = storedCards.map((c: CardData) =>
+			c.id === updated.id ? updated : c,
+		);
+		localStorage.setItem("cards", JSON.stringify(updatedCards));
+		setCard(updated);
+	};
+
+	const deleteCard = () => {
+		const storedCards = JSON.parse(localStorage.getItem("cards") || "[]");
+		const updatedCards = storedCards.filter((c: CardData) => c.id !== card?.id);
+		localStorage.setItem("cards", JSON.stringify(updatedCards));
+		setCard(null);
+		window.location.href = "/isedo/hub/show";
+	};
+
+	if (!card)
+		return (
+			<div style={{ textAlign: "center", marginTop: "50px" }}>
+				<Spin tip="Загрузка..." />
+			</div>
+		);
 
 	return (
-		<div style={{ padding: "24px" }}>
-			<Title level={2}>Страница организации</Title>
-			{card.type === "ko" ? (
-				<KoCard
-					data={card}
-					onDelete={() => {}}
-					onEdit={() => {}}
-					handleClick={() => {}}
+		<div className="org-page">
+			<div className="main-content">
+				<OrgCard
+					card={card}
+					onEdit={() => setEditVisible(true)}
+					onContact={() => setContactVisible(true)}
+					onDelete={deleteCard}
 				/>
-			) : (
-				<BoCard data={card} onDelete={() => {}} onEdit={() => {}} />
-			)}
+			</div>
+
+			<AppFooter />
+
+			<EditModal
+				open={editVisible}
+				onCancel={() => setEditVisible(false)}
+				card={card}
+				onSave={(updated) => {
+					updateCard(updated);
+					setEditVisible(false);
+				}}
+			/>
+			<ContactModal
+				open={contactVisible}
+				onCancel={() => setContactVisible(false)}
+				onSend={() => {
+					console.log("Сообщение отправлено!");
+					setContactVisible(false);
+				}}
+			/>
 		</div>
 	);
 };
-
 export default OrganizationPage;
