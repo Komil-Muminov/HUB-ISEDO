@@ -51,10 +51,10 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 		},
 		{
 			title: "Тип организации",
-			dataIndex: "orgType", // Исправляем dataIndex на "orgType"
+			dataIndex: "orgType",
 			key: "orgType",
 			render: (orgType: string | undefined, record: CardData) =>
-				record.type === "ko" ? orgType || "Не указан" : "Н/Д",
+				record.type === "ko" ? orgType || "Не указан" : "Бюджетное организация",
 		},
 		{ title: "ИНН", dataIndex: "tax", key: "tax" },
 		{ title: "Адрес", dataIndex: "address", key: "address" },
@@ -105,7 +105,7 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 						showSearch
 						optionFilterProp="children"
 						filterOption={(input, option) =>
-							option?.children.toLowerCase().includes(input.toLowerCase())
+							option?.children?.toLowerCase().includes(input.toLowerCase())
 						}
 					>
 						<Option value="Директор">Директор</Option>
@@ -125,5 +125,4 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 		</div>
 	);
 };
-
 export default RegistryTable;
