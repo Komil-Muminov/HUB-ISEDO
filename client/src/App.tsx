@@ -1,12 +1,12 @@
 import { Route, Routes, useLocation } from "react-router";
 import { lazy, Suspense, useEffect } from "react";
-import "./App.css";
 import { Loader } from "./UI/Loader/Loader";
 import Header from "./Components/Header/Header";
-import Usercard from "./routes/HR/HrSubmodules/UserCard/UserCard";
-
-import WorkersList from "./routes/HR/Workers/WorkersList";
-import CreateWorker from "./routes/HR/Workers/Create/CreateWorker";
+import OrganizationPage from "./routes/HUB/OrgPage/OrganizationPage";
+import "./App.css";
+// import UserCard from "./UI/User Card/UserCard";
+// import Usercard from "./routes/HR/HrSubmodules/UserCard/UserCard";
+// import CreateWorker from "./routes/HR/Workers/Create/CreateWorker";
 
 const LazyAuthrozation = lazy(
 	() => import("./routes/Auth/Authorization/Authorization"),
@@ -15,7 +15,6 @@ const LazyLogMe = lazy(() => import("./routes/Auth/Logme/Logme"));
 const LazyRegMe = lazy(() => import("./routes/Auth/Regme/Regme"));
 
 const LazyModules = lazy(() => import("./routes/HR/Modules"));
-const LazyContracts = lazy(() => import("./routes/HR/Contracts/Contracts"));
 const LazyPersonnelRecordsManagement = lazy(
 	() =>
 		import(
@@ -105,14 +104,9 @@ function App() {
 									path="modules/hr/submodules/working-hours/show/:id"
 									element={<LazyShowWorkingHours />}
 								/>
-								<Route
-									path="/modules/hr/submodules/employee-personal-card/create"
-									element={<CreateWorker />}
-								/>
 
 								<Route path="/isedo/hub/show" element={<LazyHub />} />
 
-								<Route path="/modules/hr/workerCard" element={<Usercard />} />
 								{/* create */}
 								<Route
 									path="/modules/hr/create"
@@ -122,6 +116,13 @@ function App() {
 								<Route
 									path="hr/contracts/show/:id"
 									element={<LazyShowContracts />}
+								/>
+
+								{/* orgPage */}
+								<Route path="/isedo/hub/show" element={<LazyHub />} />
+								<Route
+									path="/isedo/hub/org/:id"
+									element={<OrganizationPage />}
 								/>
 
 								{/* Main route */}
