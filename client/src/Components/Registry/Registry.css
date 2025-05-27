@@ -1,98 +1,98 @@
 table.registry {
-  width: 100%;
-  border-collapse: separate; /* Используем separate для работы с border-radius */
-  border-spacing: 0 15px; /* Исключаем горизонтальные отступы, создаем вертикальные */
+	width: 100%;
+	border-collapse: separate; /* Используем separate для работы с border-radius */
+	border-spacing: 0 15px; /* Исключаем горизонтальные отступы, создаем вертикальные */
 }
 
 .registry tbody tr {
-  background: var(--background-primary);
-  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
-  border-radius: 16px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  transition: all 0.3s;
+	background: var(--background-primary);
+	box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
+	border-radius: 16px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: all 0.3s;
 }
 
 .registry tbody tr:hover {
-  background-color: #ededed;
+	background-color: #ededed;
 }
 
 .registry th {
-  color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 .registry th,
 .registry td {
-  padding: 20px;
-  text-align: start;
-  max-width: 200px; /* Ограничиваем ширину ячеек */
-  white-space: nowrap; /* Запрещаем перенос текста на новую строку */
-  overflow: hidden; /* Скрываем текст, который выходит за пределы */
-  text-overflow: ellipsis; /* Добавляем многоточие в конце */
+	padding: 20px;
+	text-align: start;
+	max-width: 200px; /* Ограничиваем ширину ячеек */
+	white-space: nowrap; /* Запрещаем перенос текста на новую строку */
+	overflow: hidden; /* Скрываем текст, который выходит за пределы */
+	text-overflow: ellipsis; /* Добавляем многоточие в конце */
 }
 
 .registry tbody tr td {
-  padding: 20px 20px;
-  border-top-color: #d8d8d8;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-bottom-color: #d8d8d8;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-right: 2px dotted #d8d8d8;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+	padding: 20px 20px;
+	border-top-color: #d8d8d8;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-color: #d8d8d8;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-right: 2px dotted #d8d8d8;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 /* Закругляем углы первой и последней ячейки */
 .registry tbody tr td:first-child {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-left: 1px solid #d8d8d8; /* Добавляем левую границу для первой ячейки */
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-left: 1px solid #d8d8d8; /* Добавляем левую границу для первой ячейки */
 }
 
 .registry tbody tr td:last-child {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-right: 1px solid #d8d8d8; /* Добавляем правую границу для последней ячейки */
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-right: 1px solid #d8d8d8; /* Добавляем правую границу для последней ячейки */
 }
 
 .status-preparation,
 .status-affirmation,
 .status-completed,
 .status-deleted {
-  padding: 10px;
-  border-radius: 15px;
-  text-align: center;
-  font-weight: 700;
-  width: 100%;
+	padding: 10px;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: 700;
+	width: 100%;
 }
 
 .status-preparation {
-  background-color: #e5f5ff;
-  border: 2px solid #669bba;
-  color: #669bba;
+	background-color: #e5f5ff;
+	border: 2px solid #669bba;
+	color: #669bba;
 }
 
 .status-affirmation {
-  background-color: #fff6ea;
-  border: 2px solid #ba9566;
-  color: #ba9566;
+	background-color: #fff6ea;
+	border: 2px solid #ba9566;
+	color: #ba9566;
 }
 
 .status-completed {
-  background-color: #eafff3;
-  border: 2px solid #66ba87;
-  color: #63b885;
+	background-color: #eafff3;
+	border: 2px solid #66ba87;
+	color: #63b885;
 }
 
 .status-deleted {
-  background-color: #ffeaea;
-  border: 2px solid #b96363;
-  color: #ba6565;
+	background-color: #ffeaea;
+	border: 2px solid #b96363;
+	color: #ba6565;
 }
 
 /* .flex-table {
