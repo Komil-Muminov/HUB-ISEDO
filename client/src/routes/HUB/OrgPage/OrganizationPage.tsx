@@ -6,7 +6,7 @@ import { CardData } from "../Hub/ui";
 import { OrgCard } from "./ui/OrgCard";
 import { ContactModal } from "./ui/ContractModal";
 import { EditModal } from "./ui/EditModal";
-import { AppFooter } from "./ui/Footer";
+import { AppFooter } from "./ui/OrganizationsFooter";
 import "./style.css";
 
 const OrganizationPage = () => {
