@@ -6,7 +6,7 @@ import { CardData } from "../Hub/ui";
 import { OrgCard } from "./ui/OrgCard";
 import { ContactModal } from "./ui/ContractModal";
 import { EditModal } from "./ui/EditModal";
-import { AppFooter } from "./ui/OrganizationsFooter";
+import { OrganizationsFooter } from "./ui/OrganizationsFooter";
 import "./style.css";
 
 const OrganizationPage = () => {
@@ -76,7 +76,7 @@ const OrganizationPage = () => {
 					onDelete={deleteCard}
 				/>
 			</div>
-			<AppFooter />
+			<OrganizationsFooter />
 			<EditModal
 				open={editVisible}
 				onCancel={() => setEditVisible(false)}
