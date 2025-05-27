@@ -8,7 +8,6 @@ const Logme: React.FC = () => {
 
 	const onFinish = (values: { username: string; password: string }) => {
 		const { username, password } = values;
-
 		if (
 			(username === "kvd" && password === "123") ||
 			(username === "bo" && password === "123") ||
@@ -17,7 +16,8 @@ const Logme: React.FC = () => {
 		) {
 			localStorage.setItem("username", username);
 			console.log("Вход выполнен как:", username);
-			navigate(username === "km" ? "/km" : "/kvd");
+			navigate(username === "km" ? "/show/kvd" : "/kvd");
+			navigate(username === "kvd" ? "/show/kvd" : "/kvd");
 		} else {
 			console.log("Неверная попытка входа:", username);
 			message.error("Неверный логин или пароль");

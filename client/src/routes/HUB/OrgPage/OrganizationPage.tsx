@@ -76,9 +76,7 @@ const OrganizationPage = () => {
 					onDelete={deleteCard}
 				/>
 			</div>
-
 			<AppFooter />
-
 			<EditModal
 				open={editVisible}
 				onCancel={() => setEditVisible(false)}

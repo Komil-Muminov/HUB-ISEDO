@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import headerLogo from "../../assets/tj-logo-img.jpg";
 import {
 	Box,
@@ -32,6 +32,7 @@ const Header: React.FC = () => {
 	// DefName
 	const defName = "Зиёева Адиба";
 
+	const navigate = useNavigate();
 	return (
 		<>
 			<header>
@@ -169,11 +170,16 @@ const Header: React.FC = () => {
 										}}
 									>
 										<LogoutIcon sx={{ color: "#6DACF9" }} />
-										<Typography
-											sx={{ width: "100%", textAlign: "start", p: 1 }}
+										<Button
+											onClick={() => navigate("/auth/logme")}
+											style={{ padding: 0, margin: 0 }}
 										>
-											Выход
-										</Typography>
+											<Typography
+												sx={{ width: "100%", textAlign: "start", p: 1 }}
+											>
+												Выход
+											</Typography>
+										</Button>
 									</MenuItem>
 								</Menu>
 							</Box>

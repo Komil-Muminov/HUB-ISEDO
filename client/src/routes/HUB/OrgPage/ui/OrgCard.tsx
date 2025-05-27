@@ -1,6 +1,6 @@
-import { CardData } from "../../../Hub/ui";
+import { CardData } from "../../Hub/ui";
 import { Typography, Divider, Button, Image } from "antd";
-
+import "../style.css";
 const { Title, Text } = Typography;
 
 type OrgCardProps = {
@@ -35,27 +35,20 @@ export const OrgCard = ({
 			<Text type="secondary" style={{ display: "block", marginBottom: "20px" }}>
 				{card.type === "ko" ? "Кредитная организация" : "Бюджетная организация"}
 			</Text>
-
-			<Divider />
-
 			{/* Информация */}
 			<div className="org-info">
-				<p>
-					<Text strong>ИНН:</Text> <Text>{card.inn}</Text>
-				</p>
-				<p>
-					<Text strong>Адрес:</Text> <Text>{card.address}</Text>
-				</p>
-				<p>
-					<Text strong>Email:</Text> <Text>{card.email}</Text>
-				</p>
-				<p>
-					<Text strong>Телефон:</Text> <Text>{card.phone}</Text>
-				</p>
+				<Text strong>ИНН:</Text> <Text>{card.inn}</Text>
+				<Text strong>Адрес:</Text> <Text>{card.address}</Text>
+				<Text strong>Email:</Text> <Text>{card.email}</Text>
+				<Text strong>Телефон:</Text> <Text>{card.phone}</Text>
 			</div>
 
-			<Divider />
-
+			<div className="org__contacts">
+				<Text strong>ИНН:</Text> <Text>{card.inn}</Text>
+				<Text strong>Адрес:</Text> <Text>{card.address}</Text>
+				<Text strong>Email:</Text> <Text>{card.email}</Text>
+				<Text strong>Телефон:</Text> <Text>{card.phone}</Text>
+			</div>
 			{/* Кнопки управления */}
 			<div className="org-actions">
 				<Button type="link" size="large" onClick={onEdit}>

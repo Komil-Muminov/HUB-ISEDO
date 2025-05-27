@@ -7,7 +7,7 @@ interface TProps {
 	data: CardData;
 	onDelete: () => void;
 	onEdit?: () => void;
-	canEdit: boolean; // Обязательный пропс
+	canEdit?: boolean;
 }
 
 const BoCard = ({ data, onDelete, onEdit, canEdit }: TProps) => {

@@ -1,5 +1,5 @@
 import { Table, Input, Select, Row, Col, Button } from "antd";
-import { CardData } from "../../routes/HUB/ui";
+import { CardData } from "../../routes/HUB/Hub/ui";
 import { useEffect, useState } from "react";
 
 const { Search } = Input;
@@ -16,6 +16,7 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 	const [orgTypeFilter, setOrgTypeFilter] = useState<string | undefined>();
 	const [roleFilter, setRoleFilter] = useState<string | undefined>();
 
+	// Загрузка фильтров из localStorage при монтировании
 	useEffect(() => {
 		const savedFilters = localStorage.getItem("registryFilters");
 		if (savedFilters) {
@@ -28,6 +29,7 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 		}
 	}, []);
 
+	// Сохранение фильтров в localStorage при изменении
 	useEffect(() => {
 		localStorage.setItem(
 			"registryFilters",
@@ -35,6 +37,7 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 		);
 	}, [searchText, typeFilter, orgTypeFilter, roleFilter]);
 
+	// Сброс всех фильтров
 	const resetFilters = () => {
 		setSearchText("");
 		setTypeFilter(undefined);
@@ -43,6 +46,7 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 		localStorage.removeItem("registryFilters");
 	};
 
+	// Фильтрация данных
 	const filteredData = data.filter((entry) => {
 		const search = searchText.toLowerCase().trim();
 		const matches =
@@ -66,12 +70,6 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 		return matches && typeMatch && orgTypeMatch && roleMatch;
 	});
 
-	// Отладочный вывод
-	useEffect(() => {
-		console.log("Данные, переданные в RegistryTable:", data);
-		console.log("Отфильтрованные данные:", filteredData);
-	}, [data, filteredData]);
-
 	const columns = [
 		{
 			title: "Название",
@@ -91,8 +89,10 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 			title: "Тип организации",
 			dataIndex: "orgType",
 			key: "orgType",
-			render: (orgType: string | undefined, record: CardData) =>
-				record.type === "ko" ? orgType || "Не указан" : "Бюджетная организация",
+			render: (_: string | undefined, record: CardData) =>
+				record.type === "ko"
+					? record.orgType || "Не указан"
+					: "Бюджетная организация",
 			sorter: (a: CardData, b: CardData) => {
 				const aVal =
 					a.type === "ko" ? a.orgType || "" : "Бюджетная организация";
@@ -162,15 +162,9 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 						style={{ width: "100%" }}
 						value={roleFilter}
 						disabled={typeFilter === "ko"}
-						showSearch
-						optionFilterProp="children"
-						filterOption={(input, option) =>
-							option?.children?.toLowerCase().includes(input.toLowerCase()) ||
-							false
-						}
 					>
-						<Option value="Директор">Директор</Option>
-						<Option value="Менеджер">Менеджер</Option>
+						<Option value="ГРБС">ГРБС</Option>
+						<Option value="Получатель">Получатель</Option>
 					</Select>
 				</Col>
 				<Col span={4}>
@@ -181,13 +175,13 @@ const RegistryTable = ({ data, onRowClick }: Props) => {
 			</Row>
 
 			<Table
-				rowKey="id"
-				columns={columns}
 				dataSource={filteredData}
-				pagination={{ pageSize: 5 }}
+				columns={columns}
+				rowKey="id"
 				onRow={(record) => ({
 					onClick: () => onRowClick(record.id),
 				})}
+				pagination={{ pageSize: 10 }}
 			/>
 		</div>
 	);

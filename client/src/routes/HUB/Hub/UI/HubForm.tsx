@@ -1,3 +1,4 @@
+// HubForm.tsx
 import { useState } from "react";
 import {
 	Form,
@@ -18,15 +19,18 @@ const { Option } = Select;
 
 interface HubFormProps {
 	addCard: (newCard: CardData) => void;
+	onSuccess?: () => void;
 }
 
-const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
+const HubForm: React.FC<HubFormProps> = ({ addCard, onSuccess }) => {
 	const [form] = Form.useForm<CardData>();
 	const [cardType, setCardType] = useState<"ko" | "bo" | "">("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const handleTypeChange = (value: "ko" | "bo") => {
 		setCardType(value);
-		form.resetFields([
+		// Сбрасываем все поля кроме типа
+		const fieldsToReset = [
 			"name",
 			"orgType",
 			"tax",
@@ -37,19 +41,49 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 			"terCode",
 			"role",
 			"image",
-		]);
+		];
+		form.resetFields(fieldsToReset);
 	};
 
-	const onFinish = (values: CardData) => {
-		const cardData: CardData = {
-			...values,
-			dateDoc: values.dateDoc ? dayjs(values.dateDoc).toISOString() : undefined,
-		};
-		console.log("Создание карточки в HubForm:", cardData); // Для отладки
-		addCard(cardData);
-		form.resetFields();
-		setCardType("");
-		message.success("Карточка успешно добавлена!");
+	const onFinish = async (values: any) => {
+		if (isSubmitting) return;
+
+		setIsSubmitting(true);
+
+		try {
+			// Создаем уникальный ID
+			const uniqueId = `card-${Date.now()}-${Math.random()
+				.toString(36)
+				.substr(2, 9)}`;
+
+			const cardData: CardData = {
+				...values,
+				id: uniqueId,
+				type: cardType as "ko" | "bo",
+				dateDoc: values.dateDoc
+					? dayjs(values.dateDoc).format("YYYY-MM-DD")
+					: undefined,
+			};
+
+			console.log("Создание карточки в HubForm:", cardData);
+
+			// Добавляем карточку
+			addCard(cardData);
+
+			// Сбрасываем форму
+			form.resetFields();
+			setCardType("");
+
+			message.success("Карточка успешно добавлена!");
+
+			// Вызываем колбэк успеха
+			onSuccess?.();
+		} catch (error) {
+			console.error("Ошибка при создании карточки:", error);
+			message.error("Ошибка при создании карточки");
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	const renderField = (
@@ -83,7 +117,6 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 				form={form}
 				layout="vertical"
 				onFinish={onFinish}
-				initialValues={cardType ? { type: cardType } : undefined}
 				requiredMark={false}
 			>
 				<Row className="hub-form-row">
@@ -96,6 +129,7 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 								placeholder="Выберите тип"
 								onChange={handleTypeChange}
 								className="hub-form-select"
+								value={cardType || undefined}
 							>
 								<Option value="ko">КО (Организация)</Option>
 								<Option value="bo">БО (Представитель)</Option>
@@ -104,6 +138,7 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 						)}
 					</Col>
 				</Row>
+
 				{cardType === "ko" ? (
 					<>
 						<Divider className="hub-form-divider">Данные организации</Divider>
@@ -135,6 +170,7 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 								<DatePicker
 									format="DD.MM.YYYY"
 									className="hub-form-date-picker"
+									placeholder="Выберите дату"
 								/>,
 							)}
 							{renderField("address", "Адрес", "Город, улица")}
@@ -148,11 +184,21 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 						</Divider>
 						<Row className="hub-form-row">
 							{renderField("name", "ФИО", "ФИО представителя", undefined, true)}
-							{renderField("role", "Роль", "Должность / роль", undefined, true)}
+							{renderField(
+								"role",
+								"Роль",
+								"",
+								<Select placeholder="Выберите роль" className="hub-form-select">
+									<Option value="ГРБС">ГРБС</Option>
+									<Option value="Получатель">Получатель</Option>
+								</Select>,
+								true,
+							)}
 							{renderField("image", "URL изображения", "https://...")}
 						</Row>
 					</>
 				) : null}
+
 				{cardType && (
 					<Row justify="center" style={{ marginTop: "32px" }}>
 						<Col>
@@ -161,8 +207,10 @@ const HubForm: React.FC<HubFormProps> = ({ addCard }) => {
 									type="primary"
 									htmlType="submit"
 									className="hub-form-submit-button"
+									loading={isSubmitting}
+									disabled={isSubmitting}
 								>
-									Создать карточку
+									{isSubmitting ? "Создание..." : "Создать карточку"}
 								</Button>
 							</Form.Item>
 						</Col>

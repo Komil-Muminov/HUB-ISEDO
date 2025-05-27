@@ -11,11 +11,11 @@ import { CardData } from "../../routes/HUB/Hub/ui";
 
 interface TProps {
 	data: CardData;
-	handleClick: (state: boolean, target?: string) => void;
-	onDelete: () => void;
+	handleClick?: (state: boolean, target?: string) => void;
+	onDelete?: () => void;
 	target?: string;
 	onEdit?: () => void;
-	canEdit: boolean; // Обязательный пропс
+	canEdit?: boolean;
 }
 
 const KoCard = ({
